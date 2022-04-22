@@ -9,3 +9,10 @@ In illustrator heb ik mijn idee uitgeschets hoe ik het wil maken.
 ![image](https://user-images.githubusercontent.com/22005581/164485849-da32902a-c840-42f2-bca4-4619c5c326ac.png)
 
  Dit ga ik uitwerken door middel van elke letter een span element te maken zodat ik het apart kan stylen.
+ 
+ Door op de main te hoveren wordt de animatie van de h1 gestart. De baan van de cercuit heb ik gemaakt met een before en after op de h1 element.
+ De wielen op de O en de E. Deze heb ik met de spin keyframe laten animeren. 
+ 
+ <h3>Problemen</h3>
+Ik ben wel tegen een paar probleemen aan gelopen. Het alignen van mijn letters. Nu heb ik ze allemaal absolute gepositioneerd en ze handmatig naast elkaar gepositioneerd.
+Helaas is het hierdoor niet helemaal responsive. Hiervoor ga ik hulp vragen bij de student assistente en kijken als ik er dan uit kan komen.
