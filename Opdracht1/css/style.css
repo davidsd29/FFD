@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: formula;
+    src: url(../fonts/Formula1-Regular_web_0.ttf);
+    font-display: fallback;
+}
+
+:root {
+    --primary: #09143f;
+    --secondary: red;
+    --tertiary: #FFE636;
+    --quaternary: linear-gradient(0deg, rgba(22, 77, 13, 1) 43%, rgba(120, 115, 115, 1) 46%, rgba(120, 115, 115, 1) 50%, rgba(55, 222, 217, 1)50%);
+
+    /* details */
+    --size: 3.1em;
+    --highway: #525252;
+    --flame: linear-gradient(-45deg, red, orange);
+    --block-markings: linear-gradient(90deg, #fff 0%, #fff 50%, #ff0000 50%, #ff0000 100%);
+    --helmet: radial-gradient(circle at 115% center, grey 40%, #121936 40%);
+
+    /* car */
+    --tires: radial-gradient(circle, rgba(172, 172, 172, 1) 21%, rgba(222, 39, 5, 1) 21%, rgba(25, 26, 30, 1) 23%, rgba(25, 26, 30, 1) 62%, rgba(255, 230, 54, 1) 64%, rgba(25, 26, 30, 1) 65%);
+    --wing: linear-gradient(0deg, #09143f 57%, rgba(222, 39, 5, 1) 72%);
+    --mid: linear-gradient(29deg, #09143f 30%, rgba(255, 230, 54, 1) 53%, rgba(222, 39, 5, 1) 63%);
+    --head: linear-gradient(16deg, #09143f 32%, rgba(255, 230, 54, 1) 75%);
+}
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        --primary: #1d1d1d;
+        --secondary: #08fdd8;
+        --tertiary: #e60de6;
+        --quaternary: linear-gradient(0deg, rgba(0, 0, 0, 1) 37%, rgba(120, 115, 115, 1) 53%, rgba(62, 82, 113, 1) 54%);
+
+        /* details */
+        --size: 70px;
+        --flame: linear-gradient(-45deg, blue, rgb(0, 170, 255));
+        --block-markings: linear-gradient(90deg, #fff 0%, #fff 50%, #ff0000 50%, #ff0000 100%);
+        --helmet: radial-gradient(circle at 115% center, #e60de6 40%, black 40%);
+
+        /* car */
+        --tires: radial-gradient(circle, rgba(172, 172, 172, 1) 21%, limegreen 21%, rgba(25, 26, 30, 1) 23%, rgba(25, 26, 30, 1) 62%, #08fdd8, rgba(25, 26, 30, 1) 65%);
+        --wing: linear-gradient(0deg, #1d1d1d 57%, #08fdd8 72%);
+        --mid: linear-gradient(29deg, #1d1d1d 30%, #08fdd8 53%, rgba(222, 39, 5, 1) 63%);
+        --head: linear-gradient(16deg, #1d1d1d 32%, #08fdd8 75%);
+    }
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    background: var(--quaternary);
+}
+
+main {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    perspective: 100px;
+    /* hiermee kan ik de absolute element 3d stylen */
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: clamp(1rem, 0.5rem + 8vw, 3rem);
+    height: clamp(1rem, 0.5rem + 8vw, 3rem);
+    opacity: 0;
+    transition: 1s;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: var(--size) 0px black, calc(var(--size) * 2) 0px black, calc(var(--size) * 3) 0px black, calc(var(--size) * 4) 0px black;
+}
+
+@media only screen and (max-width: 500px) {
+    main::before {
+        left: 18%;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+    main::before {
+        left: 30%;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+    main::before {
+        left: 35%;
+    }
+}
+
+/* Block marking */
+main:hover::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    width: clamp(2.2em, 200vw, 160vw);
+    height: 1em;
+    background: var(--block-markings);
+    background-size: 120px;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg);
+    z-index: 1;
+    animation-name: highway;
+    animation-iteration-count: infinite;
+    animation-duration: 3.3s;
+    animation-timing-function: linear;
+    /* linear keeps it at a constant speed, otherwise it's going to falter  */
+}
+
+main h1 {
+    position: relative;
+    display: flex;
+    color: #FFF;
+    font-family: formula, Arial, sans-serif;
+    font-size: clamp(2.2em, 10vw, 3em);
+    z-index: 2;
+}
+
+main:hover h1 {
+    color: var(--primary);
+    animation-name: drive;
+    animation-iteration-count: infinite;
+    animation-duration: 3.3s;
+    animation-timing-function: ease-in;
+}
+
+main:hover::before {
+    color: black;
+    opacity: 1;
+    animation-name: lights;
+    animation-duration: 3.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+h1 span {
+    position: relative;
+    z-index: 1;
+    transition: 1s;
+}
+
+/* letter F */
+main:hover h1 span:first-of-type {
+    background: var(--wing);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Flame*/
+main:hover h1 span:first-of-type::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -1.3em;
+    width: .75em;
+    height: .75em;
+    filter: blur(10px);
+    transform: rotate(-45deg);
+    background: var(--flame);
+    box-shadow: 17px 20px 90px #700;
+    border: 5px solid black;
+    border-radius: 0 150px 150px 150px;
+    border-left-width: 15px;
+    border-top-width: 15px;
+    animation-name: flame;
+    animation-iteration-count: infinite;
+    animation-duration: 3.3s;
+    animation-timing-function: ease-in;
+}
+
+/* tire 1 */
+main:hover h1 span:nth-of-type(2)::before {
+    content: " ";
+    position: absolute;
+    height: .7em;
+    width: .7em;
+    top: .5em;
+    right: 0.59em;
+    background: var(--tires);
+    border-radius: 50%;
+    z-index: 2;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-duration: 3.2s;
+    animation-timing-function: linear;
+}
+
+/* letter R */
+main:hover h1 span:nth-of-type(3) {
+    transform: scaleY(1.3);
+    top: -0.1em;
+    background: var(--mid);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* letter M */
+main:hover h1 span:nth-of-type(4) {
+    transform: scale(0.8);
+    top: 0.1em;
+    margin-left: -0.2em;
+}
+
+/* driver */
+main:hover h1 span:nth-of-type(4)::before {
+    content: " ";
+    position: absolute;
+    height: 0.3em;
+    width: 0.3em;
+    top: .1em;
+    right: .3em;
+    background: var(--helmet);
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+/* letter U */
+main:hover h1 span:nth-of-type(5) {
+    margin-left: -.1em;
+}
+
+/* tire 2 */
+main:hover h1 span:nth-of-type(7)::before {
+    content: " ";
+    position: absolute;
+    height: .6em;
+    width: .6em;
+    top: .6em;
+    right: -.1em;
+    background: var(--tires);
+    border-radius: 50%;
+    z-index: 2;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-duration: 3.2s;
+    animation-timing-function: linear;
+}
+
+/* nummer 1 */
+main:hover h1 span:last-of-type {
+    transform-origin: left;
+    transform: rotate(90deg);
+    margin-left: 0.4em;
+    background: var(--head);
+    font-family: none;
+    font-size: 50px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* KEYFRAMES */
+@keyframes spin {
+    60% {
+        transform: rotate(0deg);
+    }
+
+    80% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes highway {
+    65% {
+        background-position: 0;
+    }
+
+    75% {
+        background-position: 22.5em;
+    }
+
+    90% {
+        background-position: 150.5em;
+    }
+
+    100% {
+        background-position: 52.5em;
+    }
+}
+
+@keyframes lights {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        background-color: red;
+        box-shadow: var(--size) 0px red, calc(var(--size) * 2) 0px black, calc(var(--size) * 3) 0px black, calc(var(--size) * 4) 0px black;
+    }
+
+    35% {
+        background-color: red;
+        box-shadow: var(--size) 0px red, calc(var(--size) * 2) 0px red, calc(var(--size) * 3) 0px black, calc(var(--size) * 4) 0px black;
+    }
+
+    45% {
+        background-color: red;
+        box-shadow: var(--size) 0px red, calc(var(--size) * 2) 0px red, calc(var(--size) * 3) 0px red, calc(var(--size) * 4) 0px black;
+    }
+
+    55% {
+        background-color: red;
+        box-shadow: var(--size) 0px red, calc(var(--size) * 2) 0px red, calc(var(--size) * 3) 0px red, calc(var(--size) * 4) 0px red;
+    }
+
+    65% {
+        opacity: 100;
+        background-color: lime;
+        box-shadow: var(--size) 0px lime, calc(var(--size) * 2) 0px lime, calc(var(--size) * 3) 0px lime, calc(var(--size) * 4) 0px lime;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes drive {
+    60% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    65% {
+        transform: translateX(-5vw);
+    }
+
+    80% {
+        transform: translateX(120vw);
+    }
+
+    81% {
+        opacity: 0;
+        transform: translateX(-170vw);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* flame animation */
+@keyframes flame {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    55% {
+        opacity: 100;
+        height: .75em;
+        width: .75em;
+    }
+
+    80% {
+        height: .85em;
+        width: .85em;
+    }
+
+    90% {
+        height: .75em;
+        width: .75em;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
