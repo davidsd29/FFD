@@ -28,11 +28,20 @@ MIjn eerste idee was alleen dat de auto ging transformeren en laten rijden op ee
 ### Storyboard
 ![image](https://user-images.githubusercontent.com/22005581/170098862-6bffee85-1090-4b93-841d-4f04a2df06eb.png)
 
-### uitwerking
+### Uitwerking
 De lampen en de baan heb ik met de before en after van de main gemaakt. Ik heb verschillende keyframes toegepast om de animatie er goed uit te laten zien.
 Hierbij kan je denken aan de banden laten draaien, de flame erbij toevoegen, lichten laten afgaan ect.
 
-###resultaat
+#### Uitdaging
+
+Wat ik het lastigste vond was om de animaties op elkaar laten inspringen. Met andere worden, de ene animatie moet afgaan als de ander is gestopt. Hier kreeg ik een goeie tip van mijn docent namelijk:
+![image](https://user-images.githubusercontent.com/22005581/170104929-f12406e3-18c3-4e5b-8424-47480baf94c2.png)
+
+
+
+De ene animatie speelt van 0% tot 60% en de andere animatie van 60% tot 100%.
+
+### Resultaat
 ![image](https://user-images.githubusercontent.com/22005581/170099419-2ea2eb11-fd4b-47c3-bd33-8202d5d1fa6e.png)![image](https://user-images.githubusercontent.com/22005581/170099483-d73dddc4-aa9c-412c-a0c7-c902e2977ff2.png)
 ![image](https://user-images.githubusercontent.com/22005581/170099681-054f1081-46d6-4fb7-94ef-7fbc6758cae4.png)
 ![image](https://user-images.githubusercontent.com/22005581/170099772-0c5a9c3c-5e6d-4dc6-a5da-07a0126107a3.png)
