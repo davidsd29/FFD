@@ -35,11 +35,9 @@ Hierbij kan je denken aan de banden laten draaien, de flame erbij toevoegen, lic
 #### Uitdaging
 
 Wat ik het lastigste vond was om de animaties op elkaar laten inspringen. Met andere worden, de ene animatie moet afgaan als de ander is gestopt. Hier kreeg ik een goeie tip van mijn docent namelijk:
-![image](https://user-images.githubusercontent.com/22005581/170104929-f12406e3-18c3-4e5b-8424-47480baf94c2.png)
+![image](https://user-images.githubusercontent.com/22005581/170105472-202543ed-227a-4dfc-9f36-c7e1f51fd7f9.png)
 
-
-
-De ene animatie speelt van 0% tot 60% en de andere animatie van 60% tot 100%.
+De ene animatie speelt van 0% tot 50% en de andere animatie van 50% tot 100%.
 
 ### Resultaat
 ![image](https://user-images.githubusercontent.com/22005581/170099419-2ea2eb11-fd4b-47c3-bd33-8202d5d1fa6e.png)![image](https://user-images.githubusercontent.com/22005581/170099483-d73dddc4-aa9c-412c-a0c7-c902e2977ff2.png)
