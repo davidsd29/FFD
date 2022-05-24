@@ -36,8 +36,13 @@ Hierbij kan je denken aan de banden laten draaien, de flame erbij toevoegen, lic
 
 Wat ik het lastigste vond was om de animaties op elkaar laten inspringen. Met andere worden, de ene animatie moet afgaan als de ander is gestopt. Hier kreeg ik een goeie tip van mijn docent namelijk:
 ![image](https://user-images.githubusercontent.com/22005581/170105472-202543ed-227a-4dfc-9f36-c7e1f51fd7f9.png)
-
 De ene animatie speelt van 0% tot 50% en de andere animatie van 50% tot 100%.
+![image](https://user-images.githubusercontent.com/22005581/170106278-0b32ae21-6d6b-4caa-95a1-9c388671130e.png)
+
+Ook hoe je een linear gradient op een letter toepast, na even gegoogled te hebben heb ik de oplossing gevonden, namelijk:
+![image](https://user-images.githubusercontent.com/22005581/170106514-17d468ae-d375-43d4-ab49-deef410f9b3c.png)
+
+
 
 ### Resultaat
 ![image](https://user-images.githubusercontent.com/22005581/170099419-2ea2eb11-fd4b-47c3-bd33-8202d5d1fa6e.png)![image](https://user-images.githubusercontent.com/22005581/170099483-d73dddc4-aa9c-412c-a0c7-c902e2977ff2.png)
