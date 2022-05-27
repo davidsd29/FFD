@@ -19,8 +19,10 @@ Helaas is het hierdoor niet helemaal responsive. Hiervoor ga ik hulp vragen bij 
 
 ### Hulp
 Tijdens de opdracht heb ik hulp en feedback van de student assistent (sam). Ik vond zelf wat missen bijh me animatie. Sam maakte een voorbeeld voormij en liet me zien in welke richting ik kon gaan om mijn ontwerp te verbeteren
-| ![image](https://user-images.githubusercontent.com/22005581/170097763-488353dd-4b91-4838-86a1-f50b8352a3d0.png)| 
-![image](https://user-images.githubusercontent.com/22005581/170097823-977421cf-dfe3-48e2-91f3-4aacca19c54c.png)|
+|  Normal 	| Animated   	|
+|---	|---	|
+|  ![image](https://user-images.githubusercontent.com/22005581/170097763-488353dd-4b91-4838-86a1-f50b8352a3d0.png)  	| ![image](https://user-images.githubusercontent.com/22005581/170097823-977421cf-dfe3-48e2-91f3-4aacca19c54c.png)  	|
+
 
 ## Nieuwe idee
 MIjn eerste idee was alleen dat de auto ging transformeren en laten rijden op een track. wat ik nu ga doen is de auto laten rijden op de startlichetn van formule 1. Dit past meer bij het logo en geeft het ook een race vibe
@@ -45,12 +47,8 @@ Ook hoe je een linear gradient op een letter toepast, na even gegoogled te hebbe
 
 
 ### Resultaat
-| ![image](https://user-images.githubusercontent.com/22005581/170099419-2ea2eb11-fd4b-47c3-bd33-8202d5d1fa6e.png) |
-![image](https://user-images.githubusercontent.com/22005581/170099483-d73dddc4-aa9c-412c-a0c7-c902e2977ff2.png) |
-![image](https://user-images.githubusercontent.com/22005581/170099681-054f1081-46d6-4fb7-94ef-7fbc6758cae4.png) |
-![image](https://user-images.githubusercontent.com/22005581/170099772-0c5a9c3c-5e6d-4dc6-a5da-07a0126107a3.png) |
 
-
-
-
-
+|   	|   	|   	|   	|   	|   	|   	|
+|---	|---	|---	|---	|---	|---	|---	|
+|  ![image](https://user-images.githubusercontent.com/22005581/170099419-2ea2eb11-fd4b-47c3-bd33-8202d5d1fa6e.png)   	|  ![image](https://user-images.githubusercontent.com/22005581/170099483-d73dddc4-aa9c-412c-a0c7-c902e2977ff2.png)  	|
+| ![image](https://user-images.githubusercontent.com/22005581/170099681-054f1081-46d6-4fb7-94ef-7fbc6758cae4.png)   	|  ![image](https://user-images.githubusercontent.com/22005581/170099772-0c5a9c3c-5e6d-4dc6-a5da-07a0126107a3.png)  	|
