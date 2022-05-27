@@ -1,5 +1,4 @@
-# Frontend-for-designers
-
+# Opdracht 1
 ## Brainstormen
 Ik ben bezig geweest met het brainstormen voor mij opdracht. Ik zocht naar ietswteen uitdaging zou zijn, iets die me gek zou maken omdat het lastig zou zijn.
 Dit heb ik gevonden, ik ga namelijk de formule 1 logo animeren.
@@ -53,3 +52,5 @@ Ook hoe je een linear gradient op een letter toepast, na even gegoogled te hebbe
 |---	|---	|
 |  ![image](https://user-images.githubusercontent.com/22005581/170099419-2ea2eb11-fd4b-47c3-bd33-8202d5d1fa6e.png)   	|  ![image](https://user-images.githubusercontent.com/22005581/170099483-d73dddc4-aa9c-412c-a0c7-c902e2977ff2.png)  	|
 | ![image](https://user-images.githubusercontent.com/22005581/170099681-054f1081-46d6-4fb7-94ef-7fbc6758cae4.png)   	|  ![image](https://user-images.githubusercontent.com/22005581/170099772-0c5a9c3c-5e6d-4dc6-a5da-07a0126107a3.png)  	|
+
+# Opdracht 2
