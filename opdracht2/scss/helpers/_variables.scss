@@ -1,0 +1,44 @@
+$colors: (
+    primary: skyblue,
+    secondary: black,
+    tertiary: #08fdd8,
+    quaternary: #FFFFFF,
+
+    detail:black,
+
+    //machine
+    machine-display-name: #4fc0e8,
+    display-on: 0 0 0px black,
+    machine-glas:#c0c0c0,
+    get-item: -2px -4px rgb(57 57 57),
+);
+
+$colors-dark: (
+    primary: rgb(18, 18, 48),
+    secondary: black,
+    tertiary: #08fdd8,
+    quaternary: #FFFFFF,
+    detail:#08fdd8,
+
+    //machine
+    machine: #525354,
+    machine-display-name: #89c2da,
+    display-on: 0 0 16px #4b7a8d,
+    machine-glas:#89c2da,
+    get-item: -2px -4px #4b7a8d,
+);
+
+:root{
+    @each $name, $color in $colors{
+        --color-#{$name}:#{$color}
+    }
+}
+
+@media (prefers-color-scheme:dark) {
+:root {
+
+    @each $name, $color in $colors-dark {
+        --color-#{$name}:#{$color}
+    }
+}
+}

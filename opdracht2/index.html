@@ -16,61 +16,165 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
-		<title>Firewrk Vending Machine</title>
+		<title>Firework Vending Machine</title>
 	</head>
 	<body>
 		<div class="container">
 			<main>
+
 				<div class="row">
-					<div class="col-12 col-md-7 col-lg-7 content"></div>
-					<aside class="col-12 col-md-5 col-lg-5 machine">
-						<section class="row">
-							<div class="col-8 items">
-								<div class="selector">
-									<img class="pA1" src="img/pijl.png" />
-									<img class="pA2" src="img/pijl.png" />
-									<img class="pA3" src="img/pijl.png" />
-									<img class="pB4" src="img/pijl.png" />
-									<img class="pB5" src="img/pijl.png" />
-									<img class="pB6" src="img/pijl.png" />
-								</div>
 
-								<section class="shelf" id="one">
-									<p>A1</p>
-									<p>A2</p>
-								</section>
+					<div class="col-12 col-md-7 col-lg-7 content">
 
-								<section class="shelf" id="two">
-									<p>B3</p>
-									<p>B4</p>
-								</section>
+						<div class="firework" id="firework1">
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+						</div>				
+						
+						<div class="firework" id="firework2">
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+						</div>				
+						
+						<div class="firework" id="firework3">
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+						</div>				
+						
+						<div class="firework" id="firework4">
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+							<div class="explosion"></div>
+						</div>
 
-								<section class="shelf" id="three">
-									<p>C5</p>
-									<p>C6</p>
-								</section>
-
-                                <div class="grab">
-                                    <div></div>
-                                </div>
+							<div class="lont">
+								<img src="img/vonkje.png" alt="Lont vonkje">
+								<img src="img/lont-geel.svg" alt="Vuurwerk lont">
+								<img src="img/lont-zwart.svg" alt="Verbrande lont">
 							</div>
+						
+						<div class="launch-box">
 
-							<aside class="col-4 order">
-								<input
-									type="text"
-									id="item-name"
-									readonly
-								/>
-
-								<div class="display-item"></div>
-								<div class="coins-input">
-									<div></div>
+							<section class="firework-input">
+								<div class="fw-dragdrop">
+									<img  class="fw-set" src="img/pijl1.png" />
 								</div>
-							</aside>
-						</section>
-					</aside>
+								<div class="fw-dragdrop">
+									<img class="fw-set" src="img/pijl1.png" />
+								</div>
+								<div class="fw-dragdrop">
+									<img  class="fw-set" src="img/pijl1.png" />
+								</div>
+							</section>
+							
+							<div class="inner">
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+
+						<button id="launch">launch</button>
+					</div>
+
+					<div class="d-none d-md-flex col-md-5 col-lg-5 machine">
+						<aside>
+							<section class="row">
+								<div class="col-8 items">
+									<div class="selector">
+										<img id="A1"  src="img/pijl.png" />
+										<img id="A2"  src="img/pijl1.png" />
+										<img id="B3"  src="img/pijl2.png" />
+										<img id="B4"  src="img/pijl3.png" />
+										<img id="C5"  src="img/pijl4.png" />
+										<img id="C6"  src="img/pijl5.png" />
+									</div>
+
+									<section class="shelf" id="one">
+										<p>A1</p>
+										<p>A2</p>
+									</section>
+
+									<section class="shelf" id="two">
+										<p>B3</p>
+										<p>B4</p>
+									</section>
+
+									<section class="shelf" id="three">
+										<p>C5</p>
+										<p>C6</p>
+									</section>
+
+									<div class="grab">
+										<div></div>
+									</div>
+								</div>
+
+								<aside class="col-4 order">
+									<input type="text" id="display-item-name" value="" readonly />
+
+									<div class="display-item">
+										<p id="error-machine"></p>
+										<img src="" class="d-none" alt="firework arrow">
+									</div>
+
+									<button id="get-item">Get item</button>
+
+									<div class="coins-input">
+										<div></div>
+									</div>
+								</aside>
+							</section>
+						</aside>
+						<!-- <div class="coins">
+							<span>€ 5</span>
+							<span>€ 10</span>
+							<span>€ 20</span>
+						</div> -->
+					</div>
 				</div>
 			</main>
 		</div>
+		<script src="js/scipt.js"></script>
+		<script src="js/API/drag-drop.js"></script>
 	</body>
 </html>
