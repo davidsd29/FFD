@@ -183,34 +183,32 @@ body {
   position: absolute;
 }
 .firework#firework1 {
-  top: 54em;
+  top: 28em;
   left: 53em;
-  transform: scale(1.5);
 }
 .firework#firework1 .explosion::before {
   background-color: purple;
   animation-delay: 1s;
 }
 .firework#firework2 {
-  top: 77em;
-  left: 82em;
-  transform: scale(2);
+  top: 32em;
+  left: 47em;
 }
 .firework#firework2 .explosion::before {
   background-color: blue;
   animation-delay: 0.4s;
 }
 .firework#firework3 {
-  top: 42em;
-  right: -14em;
+  top: 31em;
+  right: -3em;
 }
 .firework#firework3 .explosion::before {
   background-color: goldenrod;
   animation-delay: 0.7s;
 }
 .firework#firework4 {
-  top: 34em;
-  left: 53em;
+  top: 31em;
+  left: 47em;
 }
 .firework#firework4 .explosion::before {
   background-color: rgb(145, 255, 0);
@@ -428,9 +426,9 @@ body {
   border: double 2px lightgray;
 }
 .machine > aside .order .display-item img {
-  width: 4em;
-  height: auto;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .machine > aside .order .display-item #error-machine {
   text-align: center;
@@ -476,7 +474,7 @@ body {
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-delay: 2s;
-  animation-fill-mode: both;
+  animation-fill-mode: forwards;
 }
 
 @keyframes item-fall {

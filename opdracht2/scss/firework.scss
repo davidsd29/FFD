@@ -66,9 +66,9 @@
 	position: absolute;
 
 	&#firework1 {
-		top: 54em;
-		left: 53em;
-		transform: scale(1.5);
+		top: 28em;
+			left: 53em;
+		// transform: scale(1.5);
 
 		.explosion::before {
 			background-color: purple;
@@ -77,9 +77,9 @@
 	}
 
 	&#firework2 {
-		top: 77em;
-		left: 82em;
-		transform: scale(2);
+		top: 32em;
+		left: 47em;
+		// transform: scale(2);
 
 		.explosion::before {
 			background-color: blue;
@@ -88,8 +88,8 @@
 	}
 
 	&#firework3 {
-		top: 42em;
-		right: -14em;
+		top: 31em;
+		right: -3em;
 
 		.explosion::before {
 			background-color: goldenrod;
@@ -98,8 +98,8 @@
 	}
 
 	&#firework4 {
-		top: 34em;
-		left: 53em;
+		top: 31em;
+		left: 47em;
 
 		.explosion::before {
 			background-color: rgb(145, 255, 0);
