@@ -6,18 +6,33 @@ body {
 	// background: linear-gradient(0deg, rgba(101, 222, 55, 1) 33%, rgba(255, 252, 0, 1) 55%, rgba(19, 214, 214, 1) 56%);
 }
 
+main {
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+
+	> section {
+		&:first-of-type {
+			position: relative;
+		}
+	}
+}
+
 .fw-draggable {
-	cursor: move;
+	cursor: grab;
 
 	&.dragging {
 		opacity: 0.5;
 	}
 }
 
+.d-none {
+	display: none;
+}
+
 #launch {
 	position: absolute;
 	bottom: 0;
-	right: 2em;
+	right: 0;
 	padding: 0.2em;
 	border-radius: 5px;
 	font-weight: 700;
@@ -27,25 +42,26 @@ body {
 }
 
 .launch-box {
-	transform-style: preserve-3d;
-	position: absolute;
-	width: 100%;
-	height: 20em;
-	left: -90px;
+	position: relative;
+	top: 57%;
+	left: -3em;
+	height:-6em;
 	transform: rotateY(45deg);
-	bottom: 0;
+	transform-style: preserve-3d;
+}
 
+* {
 	.firework-input {
 		position: relative;
 		display: flex;
 		justify-content: space-evenly;
 		top: 8em;
-		width: 29em;
+		left: 5em;
+		width: 24em;
 		z-index: 1;
 
 		div {
-			// position: absolute;
-			width: 6em;
+			width: 4em;
 			height: 4em;
 			transform-origin: top center;
 			transform: rotate3d(1, 0, 0, 122deg) skewX(19deg);
@@ -53,6 +69,15 @@ body {
 			border: 1px solid getColor(detail);
 			box-shadow: getColor(display-on);
 			background-color: getColor(secondary);
+
+			// &:empty:after {
+			// 	content: 'Get your firework arrows';
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	left: 50%;
+			// 	transform: translate(-50%, -50%);
+			// 	color: red;
+			// }
 		}
 	}
 
@@ -68,8 +93,8 @@ body {
 
 			&:first-of-type {
 				// top of the box
-				left: 5.4em;
-				width: 24.7em;
+				left: 10.4em;
+				width: 19.7em;
 				height: 15.3em;
 				transform-origin: top center;
 				transform: rotate3d(1, 0, 0, 92deg) skewX(-19deg);
@@ -80,8 +105,8 @@ body {
 				// front of the box
 				top: 0px;
 				right: -9.3em;
-				width: 24.7em;
-				height: 5.8em;
+				width: 19.7em;
+				height: 3.8em;
 				transform-origin: left;
 				transform: translateZ(223px) rotate3d(0, 1, 0, 0deg);
 				background-color: #66625e;
@@ -100,7 +125,7 @@ body {
 				//right side of the box
 				top: 5.47em;
 				right: -10.3em;
-				height: 6.2em;
+				height: 4.2em;
 				width: 16.1em;
 				transform-origin: right center;
 				transform: rotate3d(0, 1, 0, -110.3deg);

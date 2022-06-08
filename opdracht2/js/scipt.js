@@ -1,6 +1,5 @@
-
-
-const firework = document.querySelectorAll('.fw-set');
+const firework = document.querySelectorAll('.fw-dragdrop img');
+const explosion = document.querySelectorAll('.explosion');
 
 // Launch button
 const launchButton = document.getElementById('launch'),
@@ -10,12 +9,15 @@ const launchButton = document.getElementById('launch'),
 launchButton.addEventListener('click', () => {
 	lont.classList.toggle('set-of');
 
-	setTimeout(function () {
+	setTimeout(() => {
 		firework.forEach((arrow) => {
 			arrow.classList.add('fw-take-off');
 			arrow.addEventListener(
 				'animationend',
 				() => {
+					explosion.forEach((boem) => {
+						boem.classList.add('boem');
+					});
 					arrow.classList.remove('fw-take-off');
 				},
 				{ once: true }
@@ -23,4 +25,3 @@ launchButton.addEventListener('click', () => {
 		});
 	}, 2700);
 });
-

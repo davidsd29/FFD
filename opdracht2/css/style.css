@@ -38,17 +38,29 @@ body {
   background-color: var(--color-primary);
 }
 
+main {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+main > section:first-of-type {
+  position: relative;
+}
+
 .fw-draggable {
-  cursor: move;
+  cursor: grab;
 }
 .fw-draggable.dragging {
   opacity: 0.5;
 }
 
+.d-none {
+  display: none;
+}
+
 #launch {
   position: absolute;
   bottom: 0;
-  right: 2em;
+  right: 0;
   padding: 0.2em;
   border-radius: 5px;
   font-weight: 700;
@@ -58,24 +70,25 @@ body {
 }
 
 .launch-box {
-  transform-style: preserve-3d;
-  position: absolute;
-  width: 100%;
-  height: 20em;
-  left: -90px;
+  position: relative;
+  top: 57%;
+  left: -3em;
+  height: -6em;
   transform: rotateY(45deg);
-  bottom: 0;
+  transform-style: preserve-3d;
 }
-.launch-box .firework-input {
+
+* .firework-input {
   position: relative;
   display: flex;
   justify-content: space-evenly;
   top: 8em;
-  width: 29em;
+  left: 5em;
+  width: 24em;
   z-index: 1;
 }
-.launch-box .firework-input div {
-  width: 6em;
+* .firework-input div {
+  width: 4em;
   height: 4em;
   transform-origin: top center;
   transform: rotate3d(1, 0, 0, 122deg) skewX(19deg);
@@ -84,34 +97,34 @@ body {
   box-shadow: var(--color-display-on);
   background-color: var(--color-secondary);
 }
-.launch-box .inner {
+* .inner {
   position: relative;
   width: 250px;
   height: 250px;
   perspective: 3800px;
   perspective-origin: center -1400px;
 }
-.launch-box .inner div {
+* .inner div {
   position: absolute;
 }
-.launch-box .inner div:first-of-type {
-  left: 5.4em;
-  width: 24.7em;
+* .inner div:first-of-type {
+  left: 10.4em;
+  width: 19.7em;
   height: 15.3em;
   transform-origin: top center;
   transform: rotate3d(1, 0, 0, 92deg) skewX(-19deg);
   background-color: #8e8986;
 }
-.launch-box .inner div:nth-of-type(2) {
+* .inner div:nth-of-type(2) {
   top: 0px;
   right: -9.3em;
-  width: 24.7em;
-  height: 5.8em;
+  width: 19.7em;
+  height: 3.8em;
   transform-origin: left;
   transform: translateZ(223px) rotate3d(0, 1, 0, 0deg);
   background-color: #66625e;
 }
-.launch-box .inner div:nth-of-type(2)::before {
+* .inner div:nth-of-type(2)::before {
   content: "Fire Work";
   position: absolute;
   top: 0;
@@ -119,10 +132,10 @@ body {
   font-weight: 700;
   font-size: 4em;
 }
-.launch-box .inner div:last-of-type {
+* .inner div:last-of-type {
   top: 5.47em;
   right: -10.3em;
-  height: 6.2em;
+  height: 4.2em;
   width: 16.1em;
   transform-origin: right center;
   transform: rotate3d(0, 1, 0, -110.3deg);
@@ -132,7 +145,7 @@ body {
 .fw-set {
   position: absolute;
   top: 3em;
-  left: -11em;
+  left: -12.5em;
   width: auto;
   height: 17em;
   margin: auto;
@@ -147,25 +160,25 @@ body {
 
 .lont {
   position: absolute;
-  top: 67%;
-  left: 49%;
+  top: 80%;
+  left: 70%;
   z-index: 1;
 }
 .lont.set-of img:nth-of-type(2) {
   clip-path: inset(0 100% 0 0);
 }
 .lont.set-of img:first-of-type {
-  transform: translatex(-8em) translatey(-5.5em);
+  transform: translatex(-5em) translatey(-3.5em);
   opacity: 1;
 }
 .lont img {
   width: 85%;
-  height: 7em;
+  height: 4em;
 }
 .lont img:first-of-type {
   position: absolute;
-  left: calc(83% - 1.5em);
-  top: calc(69% - 1.5em);
+  top: calc(25% + 1em);
+  left: calc(35% + 1.5em);
   width: 3em;
   transition: transform 3s;
   opacity: 0;
@@ -183,90 +196,95 @@ body {
   position: absolute;
 }
 .firework#firework1 {
-  top: 28em;
-  left: 53em;
+  top: -1em;
+  left: 13em;
+  transform: scale(1.5);
 }
 .firework#firework1 .explosion::before {
   background-color: purple;
   animation-delay: 1s;
 }
 .firework#firework2 {
-  top: 32em;
-  left: 47em;
+  top: 4em;
+  left: 21em;
+  transform: scale(0.8);
 }
 .firework#firework2 .explosion::before {
   background-color: blue;
   animation-delay: 0.4s;
 }
 .firework#firework3 {
-  top: 31em;
-  right: -3em;
+  top: 3em;
+  left: 6em;
 }
 .firework#firework3 .explosion::before {
   background-color: goldenrod;
   animation-delay: 0.7s;
 }
 .firework#firework4 {
-  top: 31em;
-  left: 47em;
+  top: 1em;
+  left: 8em;
+  transform: scale(0.8);
 }
 .firework#firework4 .explosion::before {
   background-color: rgb(145, 255, 0);
   animation-delay: 1s;
 }
-.firework .explosion {
+
+.explosion {
   position: absolute;
-  left: -37em;
-  bottom: 46em;
+  left: 0;
+  bottom: 0;
   width: 4px;
   height: 80px;
   overflow: hidden;
   transform-origin: 50% 100%;
 }
-.firework .explosion:first-of-type {
+.explosion:first-of-type {
   transform: rotate(0deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(2) {
+.explosion:nth-of-type(2) {
   transform: rotate(30deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(3) {
+.explosion:nth-of-type(3) {
   transform: rotate(60deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(4) {
+.explosion:nth-of-type(4) {
   transform: rotate(90deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(5) {
+.explosion:nth-of-type(5) {
   transform: rotate(120deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(6) {
+.explosion:nth-of-type(6) {
   transform: rotate(150deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(7) {
+.explosion:nth-of-type(7) {
   transform: rotate(180deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(8) {
+.explosion:nth-of-type(8) {
   transform: rotate(210deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(9) {
+.explosion:nth-of-type(9) {
   transform: rotate(240deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(10) {
+.explosion:nth-of-type(10) {
   transform: rotate(270deg) translateY(-15px);
 }
-.firework .explosion:nth-of-type(11) {
+.explosion:nth-of-type(11) {
   transform: rotate(300deg) translateY(-15px);
 }
-.firework .explosion:last-of-type {
+.explosion:last-of-type {
   transform: rotate(330deg) translateY(-15px);
 }
-.firework .explosion::before {
+
+.boem::before {
   content: "";
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   height: 40px;
-  animation: explosion 3s ease-in-out infinite;
+  animation: explosion 3s ease-in-out 2;
 }
 
 @keyframes explosion {
@@ -321,70 +339,68 @@ body {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
-.machine > aside {
-  background-color: rgb(66, 73, 83);
-  width: 100%;
+.machine {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 70%;
   height: 32em;
   padding: 1.5em;
   margin: auto;
-  position: relative;
+  background-color: rgb(66, 73, 83);
 }
-.machine > aside .items {
-  width: 21em;
-  height: 28em;
-  top: 20px;
+.machine .items {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0.5em;
+  width: 100%;
+  overflow: hidden;
   background-color: var(--color-machine-glas);
 }
-.machine > aside .items .shelf {
+.machine .items .shelf {
   background-color: rgb(66, 73, 83);
   width: 100%;
   position: absolute;
   display: flex;
   justify-content: space-around;
 }
-.machine > aside .items .shelf#one {
+.machine .items .shelf#one {
   top: 80px;
 }
-.machine > aside .items .shelf#two {
+.machine .items .shelf#two {
   top: 180px;
 }
-.machine > aside .items .shelf#three {
+.machine .items .shelf#three {
   top: 280px;
 }
-.machine > aside .items .shelf p {
+.machine .items .shelf p {
   background-color: rgb(66, 73, 83);
   color: var(--color-quaternary);
   font-size: 12px;
   display: inline;
   margin: auto;
 }
-.machine > aside .items .selector {
-  width: 100%;
-  height: 18em;
-  left: 12px;
-  top: -6px;
-  position: absolute;
+.machine .items .selector {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0.5em;
+  grid-gap: 2.5em;
+  width: 100%;
+  height: 7em;
 }
-.machine > aside .items .selector img {
+.machine .items .selector img {
   width: 5em;
   height: auto;
   margin: auto;
   transform: rotate(10deg);
 }
-.machine > aside .items .grab {
+.machine .items .grab {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 9.5em;
+  height: 10.7em;
   background-color: var(--color-machine);
 }
-.machine > aside .items .grab div {
+.machine .items .grab div {
   display: flex;
   justify-content: center;
   width: 80%;
@@ -394,17 +410,21 @@ body {
   box-shadow: inset 4px 4px 15px 0px #000000, inset 6px 7px 12px 30px rgba(0, 0, 0, 0.35);
   background-color: rgb(169, 177, 188);
 }
-.machine > aside .items .grab div img {
-  height: 10em;
-  margin: -58px;
-  transform: rotate(54deg);
+.machine .items .grab div img {
+  width: 90%;
+  transform: rotate(35deg);
 }
-.machine > aside .order {
+@media screen and (min-width: 992px) {
+  .machine .items .grab div img {
+    transform: rotate(28deg);
+  }
+}
+.machine .order {
   top: 20px;
   padding: 10px;
   background-color: var(--color-machine);
 }
-.machine > aside .order input {
+.machine .order input {
   width: 100%;
   height: 2em;
   margin-top: 3.5em;
@@ -415,27 +435,28 @@ body {
   font-weight: bold;
   text-align: center;
 }
-.machine > aside .order .display-item {
+.machine .order .display-item {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 5.3em;
   margin-top: 1em;
   padding: 0.5em;
+  aspect-ratio: 1/2;
   background-color: var(--color-secondary);
   border: double 2px lightgray;
 }
-.machine > aside .order .display-item img {
+.machine .order .display-item img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-.machine > aside .order .display-item #error-machine {
+.machine .order .display-item #error-machine {
   text-align: center;
   color: var(--color-tertiary);
   margin-top: 0.8em;
 }
-.machine > aside .order #get-item {
+.machine .order #get-item {
   width: 100%;
   padding: 0.5em;
   margin-top: 1em;
@@ -447,7 +468,7 @@ body {
   color: var(--color-quaternary);
   background-color: #646c77;
 }
-.machine > aside .order #get-item:active {
+.machine .order #get-item:active {
   box-shadow: -2px -4px #666;
   transform: translateY(-4px);
 }

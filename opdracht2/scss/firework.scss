@@ -1,7 +1,7 @@
 .fw-set {
 	position: absolute;
 	top: 3em;
-	left: -11em;
+	left: -12.5em;
 	width: auto;
 	height: 17em;
 	margin: auto;
@@ -20,8 +20,8 @@
 
 .lont {
 	position: absolute;
-	top: 67%;
-	left: 49%;
+	top: 80%;
+	left: 70%;
 	z-index: 1;
 
 	&.set-of {
@@ -31,7 +31,7 @@
 			}
 
 			&:first-of-type {
-				transform: translatex(-8em) translatey(-5.5em);
+				transform: translatex(-5em) translatey(-3.5em);
 				opacity: 1;
 			}
 		}
@@ -39,12 +39,12 @@
 
 	img {
 		width: 85%;
-		height: 7em;
+		height: 4em;
 
 		&:first-of-type {
 			position: absolute;
-			left: calc(83% - 3em / 2);
-			top: calc(69% - 3em / 2);
+			top: calc(25% - -1em);
+			left: calc(35% - -1.5em);
 			width: 3em;
 			transition: transform 3s;
 			opacity: 0;
@@ -66,9 +66,9 @@
 	position: absolute;
 
 	&#firework1 {
-		top: 28em;
-			left: 53em;
-		// transform: scale(1.5);
+		top: -1em;
+		left: 13em;
+		transform: scale(1.5);
 
 		.explosion::before {
 			background-color: purple;
@@ -77,9 +77,9 @@
 	}
 
 	&#firework2 {
-		top: 32em;
-		left: 47em;
-		// transform: scale(2);
+		top: 4em;
+		left: 21em;
+		transform: scale(0.8);
 
 		.explosion::before {
 			background-color: blue;
@@ -88,8 +88,8 @@
 	}
 
 	&#firework3 {
-		top: 31em;
-		right: -3em;
+		top: 3em;
+		left: 6em;
 
 		.explosion::before {
 			background-color: goldenrod;
@@ -98,74 +98,79 @@
 	}
 
 	&#firework4 {
-		top: 31em;
-		left: 47em;
+		top: 1em;
+		left: 8em;
+		transform: scale(0.8);
 
 		.explosion::before {
 			background-color: rgb(145, 255, 0);
 			animation-delay: 1s;
 		}
 	}
+}
 
-	.explosion {
-		position: absolute;
-		left: -37em;
-		bottom: 46em;
-		width: 4px;
-		height: 80px;
-		overflow: hidden;
-		transform-origin: 50% 100%;
+.explosion {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 4px;
+	height: 80px;
+	overflow: hidden;
+	transform-origin: 50% 100%;
 
-		&:first-of-type {
-			transform: rotate(0deg) translateY(-15px);
-		}
-		&:nth-of-type(2) {
-			transform: rotate(30deg) translateY(-15px);
-		}
-		&:nth-of-type(3) {
-			transform: rotate(60deg) translateY(-15px);
-		}
-		&:nth-of-type(4) {
-			transform: rotate(90deg) translateY(-15px);
-		}
-		&:nth-of-type(5) {
-			transform: rotate(120deg) translateY(-15px);
-		}
-		&:nth-of-type(6) {
-			transform: rotate(150deg) translateY(-15px);
-		}
-		&:nth-of-type(7) {
-			transform: rotate(180deg) translateY(-15px);
-		}
-		&:nth-of-type(8) {
-			transform: rotate(210deg) translateY(-15px);
-		}
-		&:nth-of-type(9) {
-			transform: rotate(240deg) translateY(-15px);
-		}
-		&:nth-of-type(10) {
-			transform: rotate(270deg) translateY(-15px);
-		}
-		&:nth-of-type(11) {
-			transform: rotate(300deg) translateY(-15px);
-		}
-		&:last-of-type {
-			transform: rotate(330deg) translateY(-15px);
-		}
+	&:first-of-type {
+		transform: rotate(0deg) translateY(-15px);
+	}
+	&:nth-of-type(2) {
+		transform: rotate(30deg) translateY(-15px);
+	}
+	&:nth-of-type(3) {
+		transform: rotate(60deg) translateY(-15px);
+	}
+	&:nth-of-type(4) {
+		transform: rotate(90deg) translateY(-15px);
+	}
+	&:nth-of-type(5) {
+		transform: rotate(120deg) translateY(-15px);
+	}
+	&:nth-of-type(6) {
+		transform: rotate(150deg) translateY(-15px);
+	}
+	&:nth-of-type(7) {
+		transform: rotate(180deg) translateY(-15px);
+	}
+	&:nth-of-type(8) {
+		transform: rotate(210deg) translateY(-15px);
+	}
+	&:nth-of-type(9) {
+		transform: rotate(240deg) translateY(-15px);
+	}
+	&:nth-of-type(10) {
+		transform: rotate(270deg) translateY(-15px);
+	}
+	&:nth-of-type(11) {
+		transform: rotate(300deg) translateY(-15px);
+	}
+	&:last-of-type {
+		transform: rotate(330deg) translateY(-15px);
+	}
 
-		&::before {
+	
+}
+
+.boem {
+
+	&::before {
 			content: '';
 			position: absolute;
 			top: 100%;
 			left: 0;
 			right: 0;
 			height: 40px;
-
-			animation: explosion 3s ease-in-out infinite;
+			animation: explosion 3s ease-in-out 2;
 		}
-	}
+	
 }
-
 @keyframes explosion {
 	0% {
 		top: 100%;

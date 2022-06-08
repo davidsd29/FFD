@@ -24,7 +24,7 @@ getItem.addEventListener('click', () => {
 		displayName.setAttribute('value', 'error');
 		errorMessage.textContent = 'Please select an item';
 
-		setTimeout(function () {
+		setTimeout( () => {
 			displayName.removeAttribute('value');
 			errorMessage.textContent = '';
 		}, 2000);
@@ -52,7 +52,7 @@ getItem.addEventListener('click', () => {
 
 				displayItemIMG.src = 'img/loading.gif';
 
-				setTimeout(function () {
+				setTimeout( () => {
 					let newImg = new Image();
 
 					newImg.src = item.src;
