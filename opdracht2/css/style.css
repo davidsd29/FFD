@@ -15,6 +15,9 @@
   --color-display-on:0 0 0px black ;
   --color-machine-glas:#c0c0c0 ;
   --color-get-item:-2px -4px rgb(57, 57, 57) ;
+  --mesurement-fw-angle:0deg ;
+  --mesurement-fw-delay:0s ;
+  --mesurement-fw-height:0vh ;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,6 +47,7 @@ main {
 }
 main > section:first-of-type {
   position: relative;
+  padding: 3em;
 }
 
 .fw-draggable {
@@ -59,109 +63,90 @@ main > section:first-of-type {
 
 #launch {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 0.2em;
-  border-radius: 5px;
+  bottom: 1rem;
+  right: -3rem;
+  padding: 0.25em;
+  border-radius: 0.25em;
   font-weight: 700;
-  font-size: calc(12px + 1em);
+  font-size: 1.75em;
   color: var(--color-quaternary);
   background: #66625e;
 }
 
 .launch-box {
   position: relative;
-  top: 57%;
-  left: -3em;
-  height: -6em;
-  transform: rotateY(45deg);
+  top: 40%;
+  display: grid;
+  align-content: end;
+  width: 22em;
+  height: 16em;
   transform-style: preserve-3d;
+  perspective: 10em;
+}
+.launch-box .front {
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem 0 0 0.5rem;
+  font-size: 1.75em;
+  background-color: #999;
 }
 
 * .firework-input {
   position: relative;
   display: flex;
-  justify-content: space-evenly;
-  top: 8em;
-  left: 5em;
-  width: 24em;
-  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+  height: 12rem;
+  background-color: #ccc;
+  transform-style: preserve-3d;
+  transform-origin: center bottom;
+  transform: rotatex(90deg);
 }
 * .firework-input div {
-  width: 4em;
-  height: 4em;
-  transform-origin: top center;
-  transform: rotate3d(1, 0, 0, 122deg) skewX(19deg);
+  position: relative;
+  width: 6em;
+  height: 6em;
+  padding-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  transform-style: preserve-3d;
   border-radius: 50%;
-  border: 1px solid var(--color-detail);
+  border: 0.25em solid var(--color-detail);
   box-shadow: var(--color-display-on);
   background-color: var(--color-secondary);
 }
-* .inner {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  perspective: 3800px;
-  perspective-origin: center -1400px;
+* .firework-input div:first-of-type .fw-set {
+  --mesurement-fw-height: -80vh;
+  --mesurement-fw-delay: 0.15s;
 }
-* .inner div {
-  position: absolute;
+* .firework-input div:nth-of-type(2) .fw-set {
+  --mesurement-fw-height: -81vh;
 }
-* .inner div:first-of-type {
-  left: 10.4em;
-  width: 19.7em;
-  height: 15.3em;
-  transform-origin: top center;
-  transform: rotate3d(1, 0, 0, 92deg) skewX(-19deg);
-  background-color: #8e8986;
-}
-* .inner div:nth-of-type(2) {
-  top: 0px;
-  right: -9.3em;
-  width: 19.7em;
-  height: 3.8em;
-  transform-origin: left;
-  transform: translateZ(223px) rotate3d(0, 1, 0, 0deg);
-  background-color: #66625e;
-}
-* .inner div:nth-of-type(2)::before {
-  content: "Fire Work";
-  position: absolute;
-  top: 0;
-  left: 1em;
-  font-weight: 700;
-  font-size: 4em;
-}
-* .inner div:last-of-type {
-  top: 5.47em;
-  right: -10.3em;
-  height: 4.2em;
-  width: 16.1em;
-  transform-origin: right center;
-  transform: rotate3d(0, 1, 0, -110.3deg);
-  background-color: #6a6967;
+* .firework-input div:last-of-type {
+  --mesurement-fw-height: -79vh;
+  --mesurement-fw-delay: 0.3s;
 }
 
 .fw-set {
-  position: absolute;
-  top: 3em;
-  left: -12.5em;
   width: auto;
-  height: 17em;
-  margin: auto;
-  transform: rotate(162deg) skewY(2deg);
-  transition: 1s;
-  z-index: 2;
+  height: 20em;
+  margin-left: 13em;
+  transform-origin: center bottom;
+  transform: rotatex(-92deg) skewY(-25deg) skewX(36deg);
 }
 
 .fw-take-off {
-  animation: set-of 0.5s linear;
+  animation: set-of 0.5s var(--mesurement-fw-delay) linear forwards;
 }
 
 .lont {
   position: absolute;
-  top: 80%;
-  left: 70%;
+  top: 85%;
+  left: 75%;
+  transform: rotate(-20deg);
   z-index: 1;
 }
 .lont.set-of img:nth-of-type(2) {
@@ -173,12 +158,12 @@ main > section:first-of-type {
 }
 .lont img {
   width: 85%;
-  height: 4em;
+  height: 3em;
 }
 .lont img:first-of-type {
   position: absolute;
-  top: calc(25% + 1em);
-  left: calc(35% + 1.5em);
+  top: calc(45% + 1em);
+  left: calc(50% + 1.5em);
   width: 3em;
   transition: transform 3s;
   opacity: 0;
@@ -239,52 +224,52 @@ main > section:first-of-type {
   height: 80px;
   overflow: hidden;
   transform-origin: 50% 100%;
-}
-.explosion:first-of-type {
-  transform: rotate(0deg) translateY(-15px);
+  transform: rotate(var(--mesurement-fw-angle)) translateY(-15px);
 }
 .explosion:nth-of-type(2) {
-  transform: rotate(30deg) translateY(-15px);
+  --mesurement-fw-angle: 30deg;
 }
 .explosion:nth-of-type(3) {
-  transform: rotate(60deg) translateY(-15px);
+  --mesurement-fw-angle: 60deg;
 }
 .explosion:nth-of-type(4) {
-  transform: rotate(90deg) translateY(-15px);
+  --mesurement-fw-angle: 90deg;
 }
 .explosion:nth-of-type(5) {
-  transform: rotate(120deg) translateY(-15px);
+  --mesurement-fw-angle: 120deg;
 }
 .explosion:nth-of-type(6) {
-  transform: rotate(150deg) translateY(-15px);
+  --mesurement-fw-angle: 150deg;
 }
 .explosion:nth-of-type(7) {
-  transform: rotate(180deg) translateY(-15px);
+  --mesurement-fw-angle: 180deg;
 }
 .explosion:nth-of-type(8) {
-  transform: rotate(210deg) translateY(-15px);
+  --mesurement-fw-angle: 210deg;
 }
 .explosion:nth-of-type(9) {
-  transform: rotate(240deg) translateY(-15px);
+  --mesurement-fw-angle: 240deg;
 }
 .explosion:nth-of-type(10) {
-  transform: rotate(270deg) translateY(-15px);
+  --mesurement-fw-angle: 270deg;
 }
 .explosion:nth-of-type(11) {
-  transform: rotate(300deg) translateY(-15px);
+  --mesurement-fw-angle: 300deg;
 }
 .explosion:last-of-type {
-  transform: rotate(330deg) translateY(-15px);
+  --mesurement-fw-angle: 330deg;
 }
-
-.boem::before {
+.explosion::before {
   content: "";
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  height: 40px;
-  animation: explosion 3s ease-in-out 2;
+  height: 2.5em;
+}
+
+.boem::before {
+  animation: explosion 3s ease-in-out 1;
 }
 
 @keyframes explosion {
@@ -297,46 +282,11 @@ main > section:first-of-type {
 }
 @keyframes set-of {
   0% {
-    transform: translateY(0);
+    transform: rotatex(-92deg) skewY(-25deg) skewX(36deg);
   }
   100% {
     opacity: 0;
-    transform: translateY(40em) scale(0.7);
-  }
-}
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
+    transform: rotatex(-90deg) translateY(var(--mesurement-fw-height)) scale(0.7);
   }
 }
 .machine {

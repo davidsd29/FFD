@@ -13,6 +13,7 @@ main {
 	> section {
 		&:first-of-type {
 			position: relative;
+			padding: 3em;
 		}
 	}
 }
@@ -31,105 +32,82 @@ main {
 
 #launch {
 	position: absolute;
-	bottom: 0;
-	right: 0;
-	padding: 0.2em;
-	border-radius: 5px;
+	// wat houdt rem in?
+	// bottom: 0;
+	// right: 0;
+		bottom: 1rem;
+			right: -3rem;
+	padding: 0.25em;
+	border-radius: .25em;
 	font-weight: 700;
-	font-size: calc(12px + 1em); // default size = 16px
+	font-size: calc(1.75em); // default size = 16px
 	color: getColor(quaternary);
 	background: #66625e;
 }
 
 .launch-box {
 	position: relative;
-	top: 57%;
-	left: -3em;
-	height:-6em;
-	transform: rotateY(45deg);
+	top: 40%;
+	display: grid;
+	align-content: end;
+	width: 22em;
+	height: 16em;
 	transform-style: preserve-3d;
+	perspective: 10em;
+
+	.front {
+		width: 100%;
+		height: 4rem;
+		padding: 0.5rem 0 0 0.5rem;
+		font-size: 1.75em;
+		background-color: #999;
+	}
 }
 
 * {
 	.firework-input {
 		position: relative;
 		display: flex;
-		justify-content: space-evenly;
-		top: 8em;
-		left: 5em;
-		width: 24em;
-		z-index: 1;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5em;
+		width: 100%;
+		height: 12rem;
+		background-color: #ccc;
+		transform-style: preserve-3d;
+		transform-origin: center bottom;
+		transform: rotatex(90deg);
 
 		div {
-			width: 4em;
-			height: 4em;
-			transform-origin: top center;
-			transform: rotate3d(1, 0, 0, 122deg) skewX(19deg);
+			position: relative;
+			width: 6em;
+			height: 6em;
+			padding-bottom: 1em;
+			display: flex;
+			justify-content: center;
+			align-items: end;
+			transform-style: preserve-3d;
 			border-radius: 50%;
-			border: 1px solid getColor(detail);
+			border: 0.25em solid getColor(detail);
 			box-shadow: getColor(display-on);
 			background-color: getColor(secondary);
 
-			// &:empty:after {
-			// 	content: 'Get your firework arrows';
-			// 	position: absolute;
-			// 	top: 50%;
-			// 	left: 50%;
-			// 	transform: translate(-50%, -50%);
-			// 	color: red;
-			// }
-		}
-	}
-
-	.inner {
-		position: relative;
-		width: 250px;
-		height: 250px;
-		perspective: 3800px;
-		perspective-origin: center -1400px;
-
-		div {
-			position: absolute;
-
 			&:first-of-type {
-				// top of the box
-				left: 10.4em;
-				width: 19.7em;
-				height: 15.3em;
-				transform-origin: top center;
-				transform: rotate3d(1, 0, 0, 92deg) skewX(-19deg);
-				background-color: #8e8986;
+				.fw-set {
+					--mesurement-fw-height: -80vh;
+					--mesurement-fw-delay: 0.15s;
+				}
 			}
 
 			&:nth-of-type(2) {
-				// front of the box
-				top: 0px;
-				right: -9.3em;
-				width: 19.7em;
-				height: 3.8em;
-				transform-origin: left;
-				transform: translateZ(223px) rotate3d(0, 1, 0, 0deg);
-				background-color: #66625e;
-
-				&::before {
-					content: 'Fire Work';
-					position: absolute;
-					top: 0;
-					left: 1em;
-					font-weight: 700;
-					font-size: 4em;
+				.fw-set {
+					--mesurement-fw-height: -81vh;
 				}
 			}
 
 			&:last-of-type {
-				//right side of the box
-				top: 5.47em;
-				right: -10.3em;
-				height: 4.2em;
-				width: 16.1em;
-				transform-origin: right center;
-				transform: rotate3d(0, 1, 0, -110.3deg);
-				background-color: #6a6967;
+				--mesurement-fw-height: -79vh;
+				--mesurement-fw-delay: 0.3s;
 			}
 		}
 	}

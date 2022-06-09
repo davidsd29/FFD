@@ -1,27 +1,20 @@
 .fw-set {
-	position: absolute;
-	top: 3em;
-	left: -12.5em;
 	width: auto;
-	height: 17em;
-	margin: auto;
-	transform: rotate(162deg) skewY(2deg);
-	transition: 1s;
-	z-index: 2;
+	height: 20em;
+	margin-left: 13em;
+	transform-origin: center bottom;
+	transform: rotatex(-92deg) skewY(-25deg) skewX(36deg);
 }
 
 .fw-take-off {
-	// animation-name: set-of, shake;
-	// animation-duration: .5s, .5s;
-	// animation-timing-function: linear, linear;
-	// animation-iteration-count: 1, 1;
-	animation: set-of 0.5s linear;
+	animation: set-of 0.5s getMesurements(fw-delay) linear forwards;
 }
 
 .lont {
 	position: absolute;
-	top: 80%;
-	left: 70%;
+	top: 85%;
+	left: 75%;
+		transform: rotate(-20deg);
 	z-index: 1;
 
 	&.set-of {
@@ -39,12 +32,12 @@
 
 	img {
 		width: 85%;
-		height: 4em;
+		height: 3em;
 
 		&:first-of-type {
 			position: absolute;
-			top: calc(25% - -1em);
-			left: calc(35% - -1.5em);
+			top: calc(45% - -1em);
+			left: calc(50% - -1.5em);
 			width: 3em;
 			transition: transform 3s;
 			opacity: 0;
@@ -56,7 +49,6 @@
 			left: 0;
 			top: 0;
 			clip-path: inset(0 0 0 0);
-
 			transition: 3s;
 		}
 	}
@@ -117,59 +109,56 @@
 	height: 80px;
 	overflow: hidden;
 	transform-origin: 50% 100%;
+	transform: rotate(getMesurements(fw-angle)) translateY(-15px);
 
-	&:first-of-type {
-		transform: rotate(0deg) translateY(-15px);
-	}
 	&:nth-of-type(2) {
-		transform: rotate(30deg) translateY(-15px);
+		--mesurement-fw-angle: 30deg;
 	}
 	&:nth-of-type(3) {
-		transform: rotate(60deg) translateY(-15px);
+		--mesurement-fw-angle: 60deg;
 	}
 	&:nth-of-type(4) {
-		transform: rotate(90deg) translateY(-15px);
+		--mesurement-fw-angle: 90deg;
 	}
 	&:nth-of-type(5) {
-		transform: rotate(120deg) translateY(-15px);
+		--mesurement-fw-angle: 120deg;
 	}
 	&:nth-of-type(6) {
-		transform: rotate(150deg) translateY(-15px);
+		--mesurement-fw-angle: 150deg;
 	}
 	&:nth-of-type(7) {
-		transform: rotate(180deg) translateY(-15px);
+		--mesurement-fw-angle: 180deg;
 	}
 	&:nth-of-type(8) {
-		transform: rotate(210deg) translateY(-15px);
+		--mesurement-fw-angle: 210deg;
 	}
 	&:nth-of-type(9) {
-		transform: rotate(240deg) translateY(-15px);
+		--mesurement-fw-angle: 240deg;
 	}
 	&:nth-of-type(10) {
-		transform: rotate(270deg) translateY(-15px);
+		--mesurement-fw-angle: 270deg;
 	}
 	&:nth-of-type(11) {
-		transform: rotate(300deg) translateY(-15px);
+		--mesurement-fw-angle: 300deg;
 	}
 	&:last-of-type {
-		transform: rotate(330deg) translateY(-15px);
+		--mesurement-fw-angle: 330deg;
 	}
 
-	
+	&::before {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		height: 2.5em;
+	}
 }
 
 .boem {
-
 	&::before {
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: 0;
-			right: 0;
-			height: 40px;
-			animation: explosion 3s ease-in-out 2;
-		}
-	
+		animation: explosion 3s ease-in-out 1;
+	}
 }
 @keyframes explosion {
 	0% {
@@ -183,57 +172,12 @@
 
 @keyframes set-of {
 	0% {
-		transform: translateY(0);
+		transform: rotatex(-92deg) skewY(-25deg) skewX(36deg);
 	}
 
 	100% {
 		opacity: 0;
-		transform: translateY(40em) scale(0.7);
-	}
-}
-
-@keyframes shake {
-	0% {
-		transform: translate(1px, 1px) rotate(0deg);
-	}
-
-	10% {
-		transform: translate(-1px, -2px) rotate(-1deg);
-	}
-
-	20% {
-		transform: translate(-3px, 0px) rotate(1deg);
-	}
-
-	30% {
-		transform: translate(3px, 2px) rotate(0deg);
-	}
-
-	40% {
-		transform: translate(1px, -1px) rotate(1deg);
-	}
-
-	50% {
-		transform: translate(-1px, 2px) rotate(-1deg);
-	}
-
-	60% {
-		transform: translate(-3px, 1px) rotate(0deg);
-	}
-
-	70% {
-		transform: translate(3px, 1px) rotate(-1deg);
-	}
-
-	80% {
-		transform: translate(-1px, -1px) rotate(1deg);
-	}
-
-	90% {
-		transform: translate(1px, 2px) rotate(0deg);
-	}
-
-	100% {
-		transform: translate(1px, -2px) rotate(-1deg);
+		transform: rotatex(-90deg) translateY(getMesurements(fw-height))
+			scale(0.7);
 	}
 }

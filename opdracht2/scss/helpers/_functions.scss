@@ -10,4 +10,8 @@
 
 @function getColor($color-name){
     @return var(--color-#{$color-name})
+};
+
+@function getMesurements($mesurement-name){
+    @return var(--mesurement-#{$mesurement-name})
 }

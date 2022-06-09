@@ -28,9 +28,19 @@ $colors-dark: (
     get-item: -2px -4px #4b7a8d,
 );
 
+$mesurements:(
+    fw-angle:0deg,
+    fw-delay: 0s,
+    fw-height: 0vh,
+);
+
 :root{
     @each $name, $color in $colors{
         --color-#{$name}:#{$color}
+    }  
+    
+    @each $name, $mesurement in $mesurements{
+        --mesurement-#{$name}:#{$mesurement}
     }
 }
 
