@@ -1,4 +1,4 @@
-const explosions = document.querySelectorAll('.explosion'),
+const explosions = document.querySelectorAll('.firework div'),
 	setItem = document.querySelectorAll('.firework-input div'),
 	zerostate = document.getElementById('zerostate');
 // Launch button

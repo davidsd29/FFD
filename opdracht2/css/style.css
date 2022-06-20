@@ -258,8 +258,7 @@ main #zerostate {
   background-color: rgb(145, 255, 0);
   animation-delay: 1s;
 }
-
-.explosion {
+.firework div {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -269,40 +268,40 @@ main #zerostate {
   transform-origin: 50% 100%;
   transform: rotate(var(--mesurement-fw-angle)) translateY(-15px);
 }
-.explosion:nth-of-type(2) {
+.firework div:nth-of-type(2) {
   --mesurement-fw-angle: 30deg;
 }
-.explosion:nth-of-type(3) {
+.firework div:nth-of-type(3) {
   --mesurement-fw-angle: 60deg;
 }
-.explosion:nth-of-type(4) {
+.firework div:nth-of-type(4) {
   --mesurement-fw-angle: 90deg;
 }
-.explosion:nth-of-type(5) {
+.firework div:nth-of-type(5) {
   --mesurement-fw-angle: 120deg;
 }
-.explosion:nth-of-type(6) {
+.firework div:nth-of-type(6) {
   --mesurement-fw-angle: 150deg;
 }
-.explosion:nth-of-type(7) {
+.firework div:nth-of-type(7) {
   --mesurement-fw-angle: 180deg;
 }
-.explosion:nth-of-type(8) {
+.firework div:nth-of-type(8) {
   --mesurement-fw-angle: 210deg;
 }
-.explosion:nth-of-type(9) {
+.firework div:nth-of-type(9) {
   --mesurement-fw-angle: 240deg;
 }
-.explosion:nth-of-type(10) {
+.firework div:nth-of-type(10) {
   --mesurement-fw-angle: 270deg;
 }
-.explosion:nth-of-type(11) {
+.firework div:nth-of-type(11) {
   --mesurement-fw-angle: 300deg;
 }
-.explosion:last-of-type {
+.firework div:last-of-type {
   --mesurement-fw-angle: 330deg;
 }
-.explosion::before {
+.firework div::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -355,23 +354,23 @@ main #zerostate {
   overflow: hidden;
   background-color: var(--color-machine-glas);
 }
-.machine .items .shelf {
+.machine .items section {
   background-color: rgb(66, 73, 83);
   width: 100%;
   position: absolute;
   display: flex;
   justify-content: space-around;
 }
-.machine .items .shelf#one {
+.machine .items section#one {
   top: 80px;
 }
-.machine .items .shelf#two {
+.machine .items section#two {
   top: 180px;
 }
-.machine .items .shelf#three {
+.machine .items section#three {
   top: 280px;
 }
-.machine .items .shelf p {
+.machine .items section p {
   background-color: rgb(66, 73, 83);
   color: var(--color-quaternary);
   font-size: 12px;
@@ -449,12 +448,12 @@ main #zerostate {
   height: 100%;
   object-fit: contain;
 }
-.machine .order .display-item #error-machine {
+.machine .order .display-item p {
   text-align: center;
   color: var(--color-tertiary);
   margin-top: 0.8em;
 }
-.machine .order #get-item {
+.machine .order button {
   width: 100%;
   padding: 0.5em;
   margin-top: 1em;
@@ -466,7 +465,7 @@ main #zerostate {
   color: var(--color-quaternary);
   background-color: #646c77;
 }
-.machine .order #get-item:active {
+.machine .order button:active {
   box-shadow: -2px -4px #666;
   transform: translateY(-4px);
 }
@@ -525,10 +524,19 @@ main #zerostate {
     transform: rotateZ(80deg) translate3d(200px, 0, 0);
   }
 }
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
 #menu-mobile {
   position: absolute;
   top: 2em;
-  left: 150vw;
   padding: 1em;
   width: 100%;
   text-align: center;
@@ -536,6 +544,9 @@ main #zerostate {
   z-index: 100;
   transition: 1s;
   opacity: 1;
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
 @media screen and (min-width: 992px) {
   #menu-mobile {
@@ -597,7 +608,6 @@ main #zerostate {
 .magic {
   display: block;
   transition: 1s;
-  left: -1px !important;
 }
 
 /*# sourceMappingURL=style.css.map */

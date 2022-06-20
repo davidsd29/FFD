@@ -99,59 +99,69 @@
 			animation-delay: 1s;
 		}
 	}
-}
 
-.explosion {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 4px;
-	height: 80px;
-	overflow: hidden;
-	transform-origin: 50% 100%;
-	transform: rotate(getMesurements(fw-angle)) translateY(-15px);
-
-	&:nth-of-type(2) {
-		--mesurement-fw-angle: 30deg;
-	}
-	&:nth-of-type(3) {
-		--mesurement-fw-angle: 60deg;
-	}
-	&:nth-of-type(4) {
-		--mesurement-fw-angle: 90deg;
-	}
-	&:nth-of-type(5) {
-		--mesurement-fw-angle: 120deg;
-	}
-	&:nth-of-type(6) {
-		--mesurement-fw-angle: 150deg;
-	}
-	&:nth-of-type(7) {
-		--mesurement-fw-angle: 180deg;
-	}
-	&:nth-of-type(8) {
-		--mesurement-fw-angle: 210deg;
-	}
-	&:nth-of-type(9) {
-		--mesurement-fw-angle: 240deg;
-	}
-	&:nth-of-type(10) {
-		--mesurement-fw-angle: 270deg;
-	}
-	&:nth-of-type(11) {
-		--mesurement-fw-angle: 300deg;
-	}
-	&:last-of-type {
-		--mesurement-fw-angle: 330deg;
-	}
-
-	&::before {
-		content: '';
+	div {
 		position: absolute;
-		top: 100%;
 		left: 0;
-		right: 0;
-		height: 2.5em;
+		bottom: 0;
+		width: 4px;
+		height: 80px;
+		overflow: hidden;
+		transform-origin: 50% 100%;
+		transform: rotate(getMesurements(fw-angle)) translateY(-15px);
+
+		&:nth-of-type(2) {
+			--mesurement-fw-angle: 30deg;
+		}
+
+		&:nth-of-type(3) {
+			--mesurement-fw-angle: 60deg;
+		}
+
+		&:nth-of-type(4) {
+			--mesurement-fw-angle: 90deg;
+		}
+
+		&:nth-of-type(5) {
+			--mesurement-fw-angle: 120deg;
+		}
+
+		&:nth-of-type(6) {
+			--mesurement-fw-angle: 150deg;
+		}
+
+		&:nth-of-type(7) {
+			--mesurement-fw-angle: 180deg;
+		}
+
+		&:nth-of-type(8) {
+			--mesurement-fw-angle: 210deg;
+		}
+
+		&:nth-of-type(9) {
+			--mesurement-fw-angle: 240deg;
+		}
+
+		&:nth-of-type(10) {
+			--mesurement-fw-angle: 270deg;
+		}
+
+		&:nth-of-type(11) {
+			--mesurement-fw-angle: 300deg;
+		}
+
+		&:last-of-type {
+			--mesurement-fw-angle: 330deg;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			height: 2.5em;
+		}
 	}
 }
 

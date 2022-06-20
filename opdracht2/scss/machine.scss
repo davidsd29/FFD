@@ -19,7 +19,7 @@
 		overflow: hidden;
 		background-color: getColor(machine-glas);
 
-		.shelf {
+		section {
 			background-color: rgb(66, 73, 83);
 			width: 100%;
 			position: absolute;
@@ -126,14 +126,14 @@
 				object-fit: contain;
 			}
 
-			#error-machine {
+			p {
 				text-align: center;
 				color: getColor(tertiary);
 				margin-top: 0.8em;
 			}
 		}
 
-		#get-item {
+		button {
 			width: 100%;
 			padding: 0.5em;
 			margin-top: 1em;

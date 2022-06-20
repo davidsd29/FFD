@@ -2,12 +2,12 @@
 const items = document.querySelectorAll('.selector img'),
 	displayItemIMG = document.querySelector('.display-item img'),
 	displayName = document.getElementById('display-item-name'),
-	getItem = document.getElementById('get-item'),
+	getItem = document.querySelector('.order button'),
 	grabItem = document.querySelector('.grab div')
 
 
 // Error handeling
-const errorMessage = document.getElementById('error-machine');
+const errorMessage = document.querySelector('.order p');
 
 // display items
 items.forEach((item) => {
