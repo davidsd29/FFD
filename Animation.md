@@ -56,6 +56,18 @@ bij de lauch padd is er ook een knop die het vuurwerk laat afgaan. Hierbij zoekt
 |---	|---	|---	|
 |   <img width=50% height=50% src="https://user-images.githubusercontent.com/22005581/174660307-cad7c648-922e-431b-b616-d34d5b0bb507.png"> |  <img width=50% height=50% src="https://user-images.githubusercontent.com/22005581/174660345-82848be7-4cab-4ce7-b88b-05b8da487a98.png"> |  <img width=50% height=50% src="https://user-images.githubusercontent.com/22005581/174660411-c7b6348e-8798-430a-9e19-508a14eaf988.png"> |
 
+```
+function checkEmpty() {
+	setItem.forEach((item) => {
+		if (!item.firstElementChild) {
+			zerostate.textContent = ' ~ Please choose your firework ~ ';
+			setTimeout(() => {
+				zerostate.textContent = '';
+			}, 2700);
+		}
+	});
+}
+```
 
 #### Uitdaging
 
