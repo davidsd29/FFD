@@ -1,6 +1,6 @@
 .machine {
 	position: relative;
-	display: grid;
+	display: none;
 	grid-template-columns: 2fr 1fr;
 	width: 70%;
 	height: 32em;
@@ -8,6 +8,9 @@
 	margin: auto;
 	background-color: rgb(66, 73, 83);
 
+		@include respond-to(from-lg) {
+				display: grid;
+			}
 	.items {
 		position: relative;
 		display: grid;
@@ -48,7 +51,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-gap: 2.5em;
-			width: 100%;
+			width: 125%;
 			height: 7em;
 
 			img {

@@ -9,7 +9,82 @@
 		<title>Firework Vending Machine</title>
 	</head>
 	<body>
+		<header>
+			<!-- <h1>Firework Vending Machine</h1> -->
+			<button id="menu-toggle">
+				<span></span>
+			</button>
+		</header>
+
+		<nav id="menu-mobile" class="d-none">
+			<h2>Get your firework!</h2>
+			<p>maximum of 3 arrows</p>
+			<ul>
+				<li>
+					<img id="A1" src="img/pijl.png" />
+
+					<h2>Gray Arrow</h2>
+					<aside class="controle">
+						<button>-</button>
+						<output>0</output>
+						<button>+</button>
+					</aside>
+				</li>
+
+				<li>
+					<img id="A2" src="img/pijl1.png" />
+					<h2>Blue Arrow</h2>
+					<aside class="controle">
+						<button>-</button>
+						<output>0</output>
+						<button>+</button>
+					</aside>
+				</li>
+
+				<li>
+					<img id="B3" src="img/pijl2.png" />
+					<h2>Gray with blue Arrow</h2>
+					<aside class="controle">
+						<button>-</button>
+						<output>0</output>
+						<button>+</button>
+					</aside>
+				</li>
+
+				<li>
+					<img id="B4" src="img/pijl3.png" />
+					<h2>Pink Arrow</h2>
+					<aside class="controle">
+						<button>-</button>
+						<output>0</output>
+						<button>+</button>
+					</aside>
+				</li>
+
+				<li>
+					<img id="C5" src="img/pijl4.png" />
+					<h2>Yellow Arrow</h2>
+					<aside class="controle">
+						<button>-</button>
+						<output>0</output>
+						<button>+</button>
+					</aside>
+				</li>
+
+				<li>
+					<img id="C6" src="img/pijl5.png" />
+					<h2>Purple Arrow</h2>
+					<aside class="controle">
+						<button>-</button>
+						<output>0</output>
+						<button>+</button>
+					</aside>
+				</li>
+			</ul>
+		</nav>
 		<main>
+
+			<p id="zerostate"></p>
 			<section>
 				<div class="firework" id="firework1">
 					<div class="explosion"></div>
@@ -71,11 +146,11 @@
 					<div class="explosion"></div>
 				</div>
 
-				<div class="lont">
+				<!-- <div class="lont">
 					<img src="img/vonkje.png" alt="Lont vonkje" />
 					<img src="img/lont-geel.svg" alt="Vuurwerk lont" />
 					<img src="img/lont-zwart.svg" alt="Verbrande lont" />
-				</div>
+				</div> -->
 
 				<div class="launch-box">
 					<section class="firework-input">
@@ -90,8 +165,7 @@
 						</div>
 					</section>
 
-						<section class="front">FireWork</section>
-
+					<section class="front">FireWork</section>
 				</div>
 
 				<button id="launch">launch</button>
@@ -153,6 +227,7 @@
 		</main>
 
 		<script src="js/scipt.js"></script>
+		<script src="js/firework.js"></script>
 		<script src="js/API/drag-drop.js"></script>
 	</body>
 </html>

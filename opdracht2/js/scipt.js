@@ -1,32 +1,52 @@
-const firework = document.querySelectorAll('.fw-set');
-const explosions = document.querySelectorAll('.explosion');
-
+const explosions = document.querySelectorAll('.explosion'),
+	setItem = document.querySelectorAll('.firework-input div'),
+	zerostate = document.getElementById('zerostate');
 // Launch button
-const launchButton = document.getElementById('launch'),
-	lont = document.querySelector('.lont');
+const launchButton = document.getElementById('launch');
 
+// checkEmpty()
 // launch
 launchButton.addEventListener('click', () => {
-	lont.classList.add('set-of');
+	const firework = document.querySelectorAll('.fw-set');
 
-	setTimeout(() => {
-		firework.forEach((arrow) => {
-			lont.classList.remove('set-of');
-			arrow.classList.add('fw-take-off');
-			arrow.addEventListener(
-				'animationend',
-				() => {
-					explosions.forEach((explosion) => {
-						explosion.classList.add('boem');
+	checkEmpty();
+	firework.forEach((arrow) => {
+		arrow.classList.add('fw-take-off');
+		arrow.addEventListener(
+			'animationend',
+			() => {
+				explosions.forEach((explosion) => {
+					explosion.classList.add('boem');
 
-						explosion.addEventListener('animationend', () => {
-							explosion.classList.remove('boem');
-							arrow.classList.remove('fw-take-off');
-						});
+					explosion.addEventListener('animationend', () => {
+						explosion.classList.remove('boem');
+						arrow.classList.remove('fw-take-off');
+						arrow.remove();
 					});
-				},
-				{ once: true }
-			);
-		});
-	}, 2700);
+				});
+			},
+			{ once: true }
+		);
+	});
 });
+
+//menu items
+const mobileMenu = document.getElementById('menu-mobile'),
+	menuToggle = document.getElementById('menu-toggle');
+
+menuToggle.addEventListener('click', () => {
+	//get menu
+
+	mobileMenu.classList.toggle('magic');
+});
+
+function checkEmpty() {
+	setItem.forEach((item) => {
+		if (!item.firstElementChild) {
+			zerostate.textContent = ' ~ Please choose your firework ~ ';
+			setTimeout(() => {
+				zerostate.textContent = '';
+			}, 2700);
+		}
+	});
+}

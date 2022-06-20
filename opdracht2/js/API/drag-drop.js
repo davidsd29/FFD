@@ -30,10 +30,6 @@ getItem.addEventListener('click', () => {
 		}, 2000);
 	}
 
-	// else if (getItem.contains(img)) {
-	// 	displayName.setAttribute('value', 'error');
-	// 	errorMessage.textContent = 'Please remove your item below';
-	// }
 	else {
 		displayName.removeAttribute('value');
 		displayItemIMG.classList.add('loding');
