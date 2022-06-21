@@ -62,7 +62,7 @@
 		left: 13em;
 		transform: scale(1.5);
 
-		.explosion::before {
+		div::before {
 			background-color: purple;
 			animation-delay: 1s;
 		}
@@ -73,7 +73,7 @@
 		left: 21em;
 		transform: scale(0.8);
 
-		.explosion::before {
+		div::before {
 			background-color: blue;
 			animation-delay: 0.4s;
 		}
@@ -83,7 +83,7 @@
 		top: 3em;
 		left: 6em;
 
-		.explosion::before {
+		div::before {
 			background-color: goldenrod;
 			animation-delay: 0.7s;
 		}
@@ -94,7 +94,7 @@
 		left: 8em;
 		transform: scale(0.8);
 
-		.explosion::before {
+		div::before {
 			background-color: rgb(145, 255, 0);
 			animation-delay: 1s;
 		}
@@ -161,6 +161,7 @@
 			left: 0;
 			right: 0;
 			height: 2.5em;
+			
 		}
 	}
 }

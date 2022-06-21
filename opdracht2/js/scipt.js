@@ -6,7 +6,18 @@ const launchButton = document.getElementById('launch');
 
 // checkEmpty()
 // launch
-launchButton.addEventListener('click', () => {
+
+document.addEventListener('keyup', (event) => {
+	var code = event.code;
+
+	if (code === 'Space' || code === 'Enter') {
+		setOff();
+	}
+});
+
+launchButton.addEventListener('click', setOff);
+
+function setOff() {
 	const firework = document.querySelectorAll('.fw-set');
 
 	checkEmpty();
@@ -28,7 +39,7 @@ launchButton.addEventListener('click', () => {
 			{ once: true }
 		);
 	});
-});
+}
 
 //menu items
 const mobileMenu = document.getElementById('menu-mobile'),

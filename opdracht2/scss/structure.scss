@@ -7,17 +7,17 @@ body {
 }
 
 header {
-		position: sticky;
-			top: 0;
-			
-			height: 3em;
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			width: 100%;
-			z-index: 101;
-			padding: 1em 3em;
-			background: inherit;
+	position: sticky;
+	top: 0;
+
+	height: 3em;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	z-index: 101;
+	padding: 1em 3em;
+	background: inherit;
 
 	h1 {
 		color: getColor(quaternary);
@@ -74,10 +74,15 @@ main {
 		&:first-of-type {
 			position: relative;
 			padding: 3em;
+
+			h1 {
+				color: getColor(quaternary);
+				text-align: center;
+			}
 		}
 	}
 
-	#zerostate{
+	#zerostate {
 		position: absolute;
 		top: 40%;
 		left: 20%;
@@ -117,9 +122,9 @@ main {
 		bottom: 1rem;
 		right: -3rem;
 	}
-				@include respond-to(up-to-lg) {
-					left: 50%;
-				}
+	@include respond-to(up-to-lg) {
+		left: 50%;
+	}
 }
 
 .launch-box {

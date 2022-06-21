@@ -4,7 +4,7 @@ let huidigeAantal = 0;
 const minButtons = document.querySelectorAll(' .controle button:first-of-type'),
 	plusButtons = document.querySelectorAll('.controle  button:last-of-type'),
 	arrow = document.querySelectorAll('#mobile-menu img');
-	// setItem = document.querySelectorAll('.firework-input div');
+// setItem = document.querySelectorAll('.firework-input div');
 
 minButtons.forEach((minButton) => {
 	minButton.addEventListener('click', eentjeErAf);
@@ -40,13 +40,16 @@ function eentjeErBij() {
 	}
 
 	let deParent = this.closest('li');
-	let deOutput = deParent.querySelector('img');
+	let vuurpijl = deParent.querySelector('img');
 
 	let newImg = new Image();
 
 	setItem.forEach((drop) => {
-		newImg.src = deOutput.src;
-		newImg.classList.add('fw-set');
-		drop.appendChild(newImg);
+		const inputPijl = drop.contains(vuurpijl);
+		if (inputPijl == false) {
+			newImg.src = vuurpijl.src;
+			newImg.classList.add('fw-set');
+			drop.appendChild(newImg);
+		}
 	});
 }

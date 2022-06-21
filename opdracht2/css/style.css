@@ -102,6 +102,10 @@ main > section:first-of-type {
   position: relative;
   padding: 3em;
 }
+main > section:first-of-type h1 {
+  color: var(--color-quaternary);
+  text-align: center;
+}
 main #zerostate {
   position: absolute;
   top: 40%;
@@ -228,7 +232,7 @@ main #zerostate {
   left: 13em;
   transform: scale(1.5);
 }
-.firework#firework1 .explosion::before {
+.firework#firework1 div::before {
   background-color: purple;
   animation-delay: 1s;
 }
@@ -237,7 +241,7 @@ main #zerostate {
   left: 21em;
   transform: scale(0.8);
 }
-.firework#firework2 .explosion::before {
+.firework#firework2 div::before {
   background-color: blue;
   animation-delay: 0.4s;
 }
@@ -245,7 +249,7 @@ main #zerostate {
   top: 3em;
   left: 6em;
 }
-.firework#firework3 .explosion::before {
+.firework#firework3 div::before {
   background-color: goldenrod;
   animation-delay: 0.7s;
 }
@@ -254,7 +258,7 @@ main #zerostate {
   left: 8em;
   transform: scale(0.8);
 }
-.firework#firework4 .explosion::before {
+.firework#firework4 div::before {
   background-color: rgb(145, 255, 0);
   animation-delay: 1s;
 }
