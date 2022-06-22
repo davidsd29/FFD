@@ -5,18 +5,23 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" href="#" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 		<title>Firework Vending Machine</title>
 	</head>
 	<body>
 		<header>
-			<!-- <h1>Firework Vending Machine</h1> -->
 			<button id="menu-toggle">
 				<span></span>
 			</button>
 		</header>
 
-		<nav id="menu-mobile" class="d-none">
+		<nav class="d-none">
 			<h2>Get your firework!</h2>
 			<p>maximum of 3 arrows</p>
 			<ul>
@@ -24,60 +29,60 @@
 					<img id="A1" src="img/pijl.png" />
 
 					<h2>Gray Arrow</h2>
-					<aside class="controle">
-						<button>-</button>
+					<aside>
+						<button value="min">-</button>
 						<output>0</output>
-						<button>+</button>
+						<button value="plus">+</button>
 					</aside>
 				</li>
 
 				<li>
 					<img id="A2" src="img/pijl1.png" />
 					<h2>Blue Arrow</h2>
-					<aside class="controle">
-						<button>-</button>
+					<aside>
+						<button value="min">-</button>
 						<output>0</output>
-						<button>+</button>
+						<button value="plus">+</button>
 					</aside>
 				</li>
 
 				<li>
 					<img id="B3" src="img/pijl2.png" />
 					<h2>Gray with blue Arrow</h2>
-					<aside class="controle">
-						<button>-</button>
+					<aside>
+						<button value="min">-</button>
 						<output>0</output>
-						<button>+</button>
+						<button value="plus">+</button>
 					</aside>
 				</li>
 
 				<li>
 					<img id="B4" src="img/pijl3.png" />
 					<h2>Pink Arrow</h2>
-					<aside class="controle">
-						<button>-</button>
+					<aside>
+						<button value="min">-</button>
 						<output>0</output>
-						<button>+</button>
+						<button value="plus">+</button>
 					</aside>
 				</li>
 
 				<li>
 					<img id="C5" src="img/pijl4.png" />
 					<h2>Yellow Arrow</h2>
-					<aside class="controle">
-						<button>-</button>
+					<aside>
+						<button value="min">-</button>
 						<output>0</output>
-						<button>+</button>
+						<button value="plus">+</button>
 					</aside>
 				</li>
 
 				<li>
 					<img id="C6" src="img/pijl5.png" />
 					<h2>Purple Arrow</h2>
-					<aside class="controle">
-						<button>-</button>
+					<aside>
+						<button value="min">-</button>
 						<output>0</output>
-						<button>+</button>
+						<button value="plus">+</button>
 					</aside>
 				</li>
 			</ul>
@@ -147,13 +152,14 @@
 				</div>
 
 				<div class="launch-box">
-					<section class="firework-input">
-						<div class="fw-dragdrop"></div>
-						<div class="fw-dragdrop"></div>
-						<div class="fw-dragdrop"></div>
+					<section>
+						<!-- drag drop containers -->
+						<div></div>
+						<div></div>
+						<div></div>
 					</section>
 
-					<section class="front">FireWork</section>
+					<section>FireWork</section>
 				</div>
 
 				<button id="launch">launch</button>
@@ -161,49 +167,48 @@
 
 			<section>
 				<aside class="machine">
-					<div class="items">
-						<div class="selector">
+					<div>
+						<section>
+							<!-- items -->
 							<img id="A1" src="img/pijl.png" />
 							<img id="A2" src="img/pijl1.png" />
 							<img id="B3" src="img/pijl2.png" />
 							<img id="B4" src="img/pijl3.png" />
 							<img id="C5" src="img/pijl4.png" />
 							<img id="C6" src="img/pijl5.png" />
-						</div>
+						</section>
 
-						<section id="one">
+						<!-- item shelfs -->
+						<section>
 							<p>A1</p>
 							<p>A2</p>
 						</section>
 
-						<section id="two">
+						<section>
 							<p>B3</p>
 							<p>B4</p>
 						</section>
 
-						<section id="three">
+						<section>
 							<p>C5</p>
 							<p>C6</p>
 						</section>
 
-						<div class="grab">
+						<!-- grab item -->
+						<section>
 							<div></div>
-						</div>
+						</section>
 					</div>
 
 					<aside class="order">
-						<input type="text" id="display-item-name" value="" readonly />
+						<input type="text" value="" readonly />
 
-						<div class="display-item">
+						<div>
 							<p></p>
 							<img src="" class="d-none" alt="firework arrow" />
 						</div>
 
 						<button>Get item</button>
-
-						<div class="coins-input">
-							<div></div>
-						</div>
 					</aside>
 				</aside>
 			</section>

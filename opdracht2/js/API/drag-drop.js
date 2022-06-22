@@ -1,10 +1,9 @@
 // Vending machine items
-const items = document.querySelectorAll('.selector img'),
-	displayItemIMG = document.querySelector('.display-item img'),
-	displayName = document.getElementById('display-item-name'),
+const items = document.querySelectorAll('.machine section:first-of-type img'),
+	displayItemIMG = document.querySelector('.order img'),
+	displayName = document.querySelector('.order input'),
 	getItem = document.querySelector('.order button'),
-	grabItem = document.querySelector('.grab div')
-
+	grabItem = document.querySelector('.machine section:last-of-type div');
 
 // Error handeling
 const errorMessage = document.querySelector('.order p');
@@ -24,31 +23,28 @@ getItem.addEventListener('click', () => {
 		displayName.setAttribute('value', 'error');
 		errorMessage.textContent = 'Please select an item';
 
-		setTimeout( () => {
+		setTimeout(() => {
 			displayName.removeAttribute('value');
 			errorMessage.textContent = '';
 		}, 2000);
-	}
-
-	else {
+	} else {
 		displayName.removeAttribute('value');
 		displayItemIMG.classList.add('loding');
-
 		items.forEach((item) => {
 			if (displayItemIMG.src == item.src) {
 				displayItemIMG.src = item.src;
 				item.classList.add('falling');
 				item.addEventListener(
-				'animationend',
-				() => {
-					item.classList.remove('falling');
-				},
-				{ once: true }
-			);
+					'animationend',
+					() => {
+						item.classList.remove('falling');
+					},
+					{ once: true }
+				);
 
 				displayItemIMG.src = 'img/loading.gif';
 
-				setTimeout( () => {
+				setTimeout(() => {
 					let newImg = new Image();
 
 					newImg.src = item.src;
@@ -59,9 +55,10 @@ getItem.addEventListener('click', () => {
 					grabItem.appendChild(newImg);
 
 					// Drag & drop
-					const arrow = document.querySelectorAll('.grab img'), // = new IMG(arrow)
-						fwContainers = document.querySelectorAll('.fw-dragdrop');
-
+					const arrow = document.querySelectorAll(
+							'.machine section:last-of-type img'
+						), // = new IMG(arrow)
+						fwContainers = document.querySelectorAll('.launch-box div');
 
 					arrow.forEach((draggable) => {
 						draggable.addEventListener('dragstart', () => {

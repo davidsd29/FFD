@@ -1,60 +1,60 @@
 $colors: (
-    primary: skyblue,
-    secondary: black,
-    tertiary: #08fdd8,
-    quaternary: #FFFFFF,
+	primary: skyblue,
+	secondary: black,
+	tertiary: #08fdd8,
+	quaternary: #ffffff,
 
-    detail:black,
+	detail: black,
 
-    //machine
-    machine-display-name: #4fc0e8,
-    display-on: 0 0 0px black,
-    machine-glas:#c0c0c0,
-    get-item: -2px -4px rgb(57 57 57),
+	//machine
+	machine-display-name: #4fc0e8,
+	display-on: 0 0 0px black,
+	machine-glas: #c0c0c0,
+	get-item: -2px -4px rgb(57 57 57),
 );
 
 $colors-dark: (
-    primary: rgb(18, 18, 48),
-    secondary: black,
-    tertiary: #08fdd8,
-    quaternary: #FFFFFF,
-    detail:#08fdd8,
+	primary: rgb(18, 18, 48),
+	secondary: black,
+	tertiary: #08fdd8,
+	quaternary: #ffffff,
+	detail: #08fdd8,
 
-    //machine
-    machine: #525354,
-    machine-display-name: #89c2da,
-    display-on: 0 0 16px #4b7a8d,
-    machine-glas:#89c2da,
-    get-item: -2px -4px #4b7a8d,
+	//machine
+	machine: #525354,
+	machine-display-name: #89c2da,
+	display-on: 0 0 16px #4b7a8d,
+	machine-glas: #89c2da,
+	get-item: -2px -4px #4b7a8d,
 );
 
-$mesurements:(
-    fw-angle:0deg,
-    fw-delay: 0s,
-    fw-height: 0vh,
+$mesurements: (
+	fw-angle: 0deg,
+	fw-delay: 0s,
+	fw-height: 0vh,
+	text-font: 'Luckiest Guy',
 );
 
-:root{
-    @each $name, $color in $colors{
-        --color-#{$name}:#{$color}
-    }  
-    
-    @each $name, $mesurement in $mesurements{
-        --mesurement-#{$name}:#{$mesurement}
-    }
-}
-
-@media (prefers-color-scheme:dark) {
 :root {
+	@each $name, $color in $colors {
+		--color-#{$name}: #{$color};
+	}
 
-    @each $name, $color in $colors-dark {
-        --color-#{$name}:#{$color}
-    }
-}
+	@each $name, $mesurement in $mesurements {
+		--mesurement-#{$name}: #{$mesurement};
+	}
 }
 
- // Bootstrap breakpoints
- $breakpoint-sm: 576px;
- $breakpoint-md: 768px;
- $breakpoint-lg: 992px;
- $breakpoint-xl: 1200px;
+@media (prefers-color-scheme: dark) {
+	:root {
+		@each $name, $color in $colors-dark {
+			--color-#{$name}: #{$color};
+		}
+	}
+}
+
+// Bootstrap breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

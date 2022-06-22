@@ -78,6 +78,12 @@ main {
 			h1 {
 				color: getColor(quaternary);
 				text-align: center;
+				font-family: (getMesurements(text-font));
+				font-size: 4em;
+
+				@media (prefers-color-scheme: dark) {
+					text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+				}
 			}
 		}
 	}
@@ -106,10 +112,7 @@ main {
 
 #launch {
 	position: absolute;
-	// wat houdt rem in?
-	// bottom: 0;
-	// right: 0;
-	bottom: -8rem;
+	bottom: -2rem;
 	padding: 0.25em;
 	border-radius: 0.25em;
 	transform: translate(-50%);
@@ -129,7 +132,7 @@ main {
 
 .launch-box {
 	position: relative;
-	top: 40%;
+	top: 10%;
 	display: grid;
 	align-content: end;
 	width: 100%;
@@ -139,63 +142,66 @@ main {
 
 	@include respond-to(from-lg) {
 		width: 22em;
+		top: 35%;
 	}
 
-	.front {
-		width: 100%;
-		height: 4rem;
-		padding: 0.5rem 0 0 0.5rem;
-		text-align: center;
-		font-size: 1.75em;
-		background-color: #999;
-	}
-}
-
-* {
-	.firework-input {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 0.5em;
-		width: 100%;
-		height: 12rem;
-		background-color: #ccc;
-		transform-style: preserve-3d;
-		transform-origin: center bottom;
-		transform: rotatex(90deg);
-
-		div {
+	section {
+		&:first-of-type {
 			position: relative;
-			width: 6em;
-			height: 6em;
-			padding-bottom: 1em;
 			display: flex;
 			justify-content: center;
-			align-items: end;
+			align-items: center;
+			gap: 0.5em;
+			width: 100%;
+			height: 12rem;
+			background-color: #ccc;
 			transform-style: preserve-3d;
-			border-radius: 50%;
-			border: 0.25em solid getColor(detail);
-			box-shadow: getColor(display-on);
-			background-color: getColor(secondary);
+			transform-origin: center bottom;
+			transform: rotatex(90deg);
 
-			&:first-of-type {
-				.fw-set {
-					--mesurement-fw-height: -80vh;
-					--mesurement-fw-delay: 0.15s;
+			div {
+				position: relative;
+				width: 6em;
+				height: 6em;
+				padding-bottom: 1em;
+				display: flex;
+				justify-content: center;
+				align-items: end;
+				transform-style: preserve-3d;
+				border-radius: 50%;
+				border: 0.25em solid getColor(detail);
+				box-shadow: getColor(display-on);
+				background-color: getColor(secondary);
+
+				&:first-of-type {
+					.fw-set {
+						--mesurement-fw-height: -80vh;
+						--mesurement-fw-delay: 0.15s;
+					}
+				}
+
+				&:nth-of-type(2) {
+					.fw-set {
+						--mesurement-fw-height: -81vh;
+					}
+				}
+
+				&:last-of-type {
+					--mesurement-fw-height: -79vh;
+					--mesurement-fw-delay: 0.3s;
 				}
 			}
+		}
 
-			&:nth-of-type(2) {
-				.fw-set {
-					--mesurement-fw-height: -81vh;
-				}
-			}
-
-			&:last-of-type {
-				--mesurement-fw-height: -79vh;
-				--mesurement-fw-delay: 0.3s;
-			}
+		&:last-of-type {
+			// Front of the box
+			width: 100%;
+			height: 4rem;
+			padding: 0.5rem 0 0 0.5rem;
+			text-align: center;
+			font-size: 1.75em;
+			font-family: (getMesurements(text-font));
+			background-color: #999;
 		}
 	}
 }

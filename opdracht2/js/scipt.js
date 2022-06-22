@@ -1,6 +1,6 @@
 const explosions = document.querySelectorAll('.firework div'),
-	setItem = document.querySelectorAll('.firework-input div'),
-	zerostate = document.getElementById('zerostate');
+	zerostate = document.getElementById('zerostate'),
+	setItem = document.querySelectorAll('.launch-box div');
 // Launch button
 const launchButton = document.getElementById('launch');
 
@@ -42,7 +42,7 @@ function setOff() {
 }
 
 //menu items
-const mobileMenu = document.getElementById('menu-mobile'),
+const mobileMenu = document.querySelector('nav'),
 	menuToggle = document.getElementById('menu-toggle');
 
 menuToggle.addEventListener('click', () => {
@@ -52,8 +52,10 @@ menuToggle.addEventListener('click', () => {
 });
 
 function checkEmpty() {
-	setItem.forEach((item) => {
-		if (!item.firstElementChild) {
+	const vuurpijl = document.querySelector('.launch-box img');
+
+	setItem.forEach((lauchHole) => {
+		if (!lauchHole.contains(vuurpijl)) {
 			zerostate.textContent = ' ~ Please choose your firework ~ ';
 			setTimeout(() => {
 				zerostate.textContent = '';
@@ -61,3 +63,5 @@ function checkEmpty() {
 		}
 	});
 }
+
+console.log(checkEmpty());

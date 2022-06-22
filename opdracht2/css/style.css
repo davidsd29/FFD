@@ -6,32 +6,33 @@
 }
 
 :root {
-  --color-primary:skyblue ;
-  --color-secondary:black ;
-  --color-tertiary:#08fdd8 ;
-  --color-quaternary:#FFFFFF ;
-  --color-detail:black ;
-  --color-machine-display-name:#4fc0e8 ;
-  --color-display-on:0 0 0px black ;
-  --color-machine-glas:#c0c0c0 ;
-  --color-get-item:-2px -4px rgb(57, 57, 57) ;
-  --mesurement-fw-angle:0deg ;
-  --mesurement-fw-delay:0s ;
-  --mesurement-fw-height:0vh ;
+  --color-primary: skyblue;
+  --color-secondary: black;
+  --color-tertiary: #08fdd8;
+  --color-quaternary: #ffffff;
+  --color-detail: black;
+  --color-machine-display-name: #4fc0e8;
+  --color-display-on: 0 0 0px black;
+  --color-machine-glas: #c0c0c0;
+  --color-get-item: -2px -4px rgb(57, 57, 57);
+  --mesurement-fw-angle: 0deg;
+  --mesurement-fw-delay: 0s;
+  --mesurement-fw-height: 0vh;
+  --mesurement-text-font: Luckiest Guy;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary:rgb(18, 18, 48) ;
-    --color-secondary:black ;
-    --color-tertiary:#08fdd8 ;
-    --color-quaternary:#FFFFFF ;
-    --color-detail:#08fdd8 ;
-    --color-machine:#525354 ;
-    --color-machine-display-name:#89c2da ;
-    --color-display-on:0 0 16px #4b7a8d ;
-    --color-machine-glas:#89c2da ;
-    --color-get-item:-2px -4px #4b7a8d ;
+    --color-primary: rgb(18, 18, 48);
+    --color-secondary: black;
+    --color-tertiary: #08fdd8;
+    --color-quaternary: #ffffff;
+    --color-detail: #08fdd8;
+    --color-machine: #525354;
+    --color-machine-display-name: #89c2da;
+    --color-display-on: 0 0 16px #4b7a8d;
+    --color-machine-glas: #89c2da;
+    --color-get-item: -2px -4px #4b7a8d;
   }
 }
 body {
@@ -105,6 +106,13 @@ main > section:first-of-type {
 main > section:first-of-type h1 {
   color: var(--color-quaternary);
   text-align: center;
+  font-family: var(--mesurement-text-font);
+  font-size: 4em;
+}
+@media (prefers-color-scheme: dark) {
+  main > section:first-of-type h1 {
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
 }
 main #zerostate {
   position: absolute;
@@ -128,7 +136,7 @@ main #zerostate {
 
 #launch {
   position: absolute;
-  bottom: -8rem;
+  bottom: -2rem;
   padding: 0.25em;
   border-radius: 0.25em;
   transform: translate(-50%);
@@ -151,7 +159,7 @@ main #zerostate {
 
 .launch-box {
   position: relative;
-  top: 40%;
+  top: 10%;
   display: grid;
   align-content: end;
   width: 100%;
@@ -162,18 +170,10 @@ main #zerostate {
 @media screen and (min-width: 992px) {
   .launch-box {
     width: 22em;
+    top: 35%;
   }
 }
-.launch-box .front {
-  width: 100%;
-  height: 4rem;
-  padding: 0.5rem 0 0 0.5rem;
-  text-align: center;
-  font-size: 1.75em;
-  background-color: #999;
-}
-
-* .firework-input {
+.launch-box section:first-of-type {
   position: relative;
   display: flex;
   justify-content: center;
@@ -186,7 +186,7 @@ main #zerostate {
   transform-origin: center bottom;
   transform: rotatex(90deg);
 }
-* .firework-input div {
+.launch-box section:first-of-type div {
   position: relative;
   width: 6em;
   height: 6em;
@@ -200,16 +200,25 @@ main #zerostate {
   box-shadow: var(--color-display-on);
   background-color: var(--color-secondary);
 }
-* .firework-input div:first-of-type .fw-set {
+.launch-box section:first-of-type div:first-of-type .fw-set {
   --mesurement-fw-height: -80vh;
   --mesurement-fw-delay: 0.15s;
 }
-* .firework-input div:nth-of-type(2) .fw-set {
+.launch-box section:first-of-type div:nth-of-type(2) .fw-set {
   --mesurement-fw-height: -81vh;
 }
-* .firework-input div:last-of-type {
+.launch-box section:first-of-type div:last-of-type {
   --mesurement-fw-height: -79vh;
   --mesurement-fw-delay: 0.3s;
+}
+.launch-box section:last-of-type {
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem 0 0 0.5rem;
+  text-align: center;
+  font-size: 1.75em;
+  font-family: var(--mesurement-text-font);
+  background-color: #999;
 }
 
 .fw-set {
@@ -350,58 +359,65 @@ main #zerostate {
     display: grid;
   }
 }
-.machine .items {
+.machine > div {
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
   overflow: hidden;
   background-color: var(--color-machine-glas);
+  box-shadow: var(--color-display-on);
 }
-.machine .items section {
+.machine > div section:first-of-type {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2.5em;
+  width: 90%;
+  height: 7em;
+}
+@media screen and (min-width: 1200px) {
+  .machine > div section:first-of-type {
+    width: 125%;
+  }
+}
+.machine > div section:first-of-type img {
+  width: 5em;
+  height: auto;
+  margin: auto;
+  transform: rotate(10deg);
+}
+.machine > div section:nth-of-type(2), .machine > div section:nth-of-type(3), .machine > div section:nth-of-type(4) {
   background-color: rgb(66, 73, 83);
   width: 100%;
   position: absolute;
   display: flex;
   justify-content: space-around;
+  box-shadow: var(--color-display-on);
 }
-.machine .items section#one {
-  top: 80px;
-}
-.machine .items section#two {
-  top: 180px;
-}
-.machine .items section#three {
-  top: 280px;
-}
-.machine .items section p {
+.machine > div section:nth-of-type(2) p, .machine > div section:nth-of-type(3) p, .machine > div section:nth-of-type(4) p {
   background-color: rgb(66, 73, 83);
   color: var(--color-quaternary);
   font-size: 12px;
   display: inline;
   margin: auto;
 }
-.machine .items .selector {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2.5em;
-  width: 125%;
-  height: 7em;
+.machine > div section:nth-of-type(2) {
+  top: 80px;
 }
-.machine .items .selector img {
-  width: 5em;
-  height: auto;
-  margin: auto;
-  transform: rotate(10deg);
+.machine > div section:nth-of-type(3) {
+  top: 180px;
 }
-.machine .items .grab {
+.machine > div section:nth-of-type(4) {
+  top: 280px;
+}
+.machine > div section:last-of-type {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 10.7em;
-  background-color: var(--color-machine);
+  background-color: rgb(66, 73, 83);
 }
-.machine .items .grab div {
+.machine > div section:last-of-type div {
   display: flex;
   justify-content: center;
   width: 80%;
@@ -411,12 +427,12 @@ main #zerostate {
   box-shadow: inset 4px 4px 15px 0px #000000, inset 6px 7px 12px 30px rgba(0, 0, 0, 0.35);
   background-color: rgb(169, 177, 188);
 }
-.machine .items .grab div img {
+.machine > div section:last-of-type div img {
   width: 90%;
   transform: rotate(35deg);
 }
 @media screen and (min-width: 992px) {
-  .machine .items .grab div img {
+  .machine > div section:last-of-type div img {
     transform: rotate(28deg);
   }
 }
@@ -436,7 +452,7 @@ main #zerostate {
   font-weight: bold;
   text-align: center;
 }
-.machine .order .display-item {
+.machine .order div {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -447,15 +463,16 @@ main #zerostate {
   background-color: var(--color-secondary);
   border: double 2px lightgray;
 }
-.machine .order .display-item img {
+.machine .order div img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-.machine .order .display-item p {
+.machine .order div p {
   text-align: center;
   color: var(--color-tertiary);
   margin-top: 0.8em;
+  text-shadow: var(--color-display-on);
 }
 .machine .order button {
   width: 100%;
@@ -472,22 +489,6 @@ main #zerostate {
 .machine .order button:active {
   box-shadow: -2px -4px #666;
   transform: translateY(-4px);
-}
-
-.coins-input {
-  width: 2em;
-  height: 4em;
-  margin: 1em auto;
-  padding: 5px 0;
-  border-radius: 5px;
-  background-color: rgb(169, 177, 188);
-}
-.coins-input div {
-  width: 8px;
-  height: 100%;
-  margin: auto;
-  border-radius: 5px;
-  background-color: var(--color-secondary);
 }
 
 .falling {
@@ -538,7 +539,7 @@ main #zerostate {
     opacity: 1;
   }
 }
-#menu-mobile {
+nav {
   position: absolute;
   top: 2em;
   padding: 1em;
@@ -553,17 +554,19 @@ main #zerostate {
   animation-fill-mode: both;
 }
 @media screen and (min-width: 992px) {
-  #menu-mobile {
+  nav {
     display: none;
   }
 }
-#menu-mobile h2 {
+nav h2 {
   margin-bottom: 1em;
+  font-family: var(--mesurement-text-font);
+  color: darkred;
 }
-#menu-mobile p {
+nav p {
   font-style: italic;
 }
-#menu-mobile li {
+nav li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -571,28 +574,33 @@ main #zerostate {
   padding: 4vw;
   border-bottom: 5px dotted red;
 }
-#menu-mobile li:nth-child(2n+1) {
+nav li:nth-child(2n+1) {
   grid-template-areas: "img name name" "img aside aside";
 }
-#menu-mobile li:nth-child(2n+2) {
+nav li:nth-child(2n+2) {
   grid-template-areas: "name name img" "aside aside img";
 }
-#menu-mobile li:nth-child(2n+2) img {
+nav li:nth-child(2n+2) img {
   transform: scaleX(-1);
 }
-#menu-mobile li img {
+nav li img {
   width: 100%;
   height: 8em;
   object-fit: fill;
   grid-area: img;
 }
-#menu-mobile li h2 {
+nav li h2 {
   grid-area: name;
 }
-#menu-mobile li aside {
+nav li aside {
+  font-size: 3.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-area: aside;
+  gap: 0.5em;
 }
-#menu-mobile li aside button {
+nav li aside button {
   width: 3em;
   height: 3em;
   border-radius: 50%;
@@ -601,12 +609,15 @@ main #zerostate {
   color: var(--color-quaternary);
   background-color: rgb(66, 73, 83);
 }
-#menu-mobile li aside button:disabled {
+nav li aside button:disabled {
   cursor: not-allowed;
   background-color: red;
 }
-#menu-mobile li aside button:hover:not(:disabled) {
+nav li aside button:hover:not(:disabled) {
   background-color: var(--color-tertiary);
+}
+nav li aside output {
+  font-family: var(--mesurement-text-font);
 }
 
 .magic {

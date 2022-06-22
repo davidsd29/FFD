@@ -1,17 +1,17 @@
 // Returns a color from the $colors-map based on the supplied key
 @function color($key) {
-    @if map-has-key($colors, $key) {
-        @return map-get($colors, $key);
-    }
+	@if map-has-key($colors, $key) {
+		@return map-get($colors, $key);
+	}
 
-    @warn "Unknown `#{$key}` in $colors";
-    @return null;
+	@warn "Unknown `#{$key}` in $colors";
+	@return null;
 }
 
-@function getColor($color-name){
-    @return var(--color-#{$color-name})
-};
+@function getColor($color-name) {
+	@return var(--color-#{$color-name});
+}
 
-@function getMesurements($mesurement-name){
-    @return var(--mesurement-#{$mesurement-name})
+@function getMesurements($mesurement-name) {
+	@return var(--mesurement-#{$mesurement-name});
 }
