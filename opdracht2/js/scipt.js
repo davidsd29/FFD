@@ -1,11 +1,10 @@
 const explosions = document.querySelectorAll('.firework div'),
 	zerostate = document.getElementById('zerostate'),
 	setItem = document.querySelectorAll('.launch-box div');
+
+	let deOutput = document.querySelectorAll('output');
 // Launch button
 const launchButton = document.getElementById('launch');
-
-// checkEmpty()
-// launch
 
 document.addEventListener('keyup', (event) => {
 	var code = event.code;
@@ -21,6 +20,7 @@ function setOff() {
 	const firework = document.querySelectorAll('.fw-set');
 
 	checkEmpty();
+	deOutput = 0
 	firework.forEach((arrow) => {
 		arrow.classList.add('fw-take-off');
 		arrow.addEventListener(

@@ -23,6 +23,16 @@ function eentjeErAf() {
 	setItem.forEach((drop) => {
 		drop.removeChild(arrowChild);
 	});
+
+		setItem.forEach((drop) => {
+		if (drop.hasChildNodes()) {
+			if (vuurpijl.src = arrow.src)
+			{
+			drop.removeChild(vuurpijl);
+			}
+		}
+	});
+}
 }
 
 plusButtons.forEach((plusButton) => {
