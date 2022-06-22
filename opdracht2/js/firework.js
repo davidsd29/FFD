@@ -20,20 +20,20 @@ function eentjeErAf() {
 	}
 
 	const arrowChild = deParent.querySelector('img');
-	setItem.forEach((drop) => {
-		drop.removeChild(arrowChild);
-	});
+	// setItem.forEach((drop) => {
+	// 	drop.removeChild(arrowChild);
+	// });
 
 		setItem.forEach((drop) => {
 		if (drop.hasChildNodes()) {
-			if (vuurpijl.src = arrow.src)
-			{
-			drop.removeChild(vuurpijl);
-			}
+			// if (arrowChild.src = arrow.src)
+			// {
+			console.log(arrowChild)
+			// }
 		}
 	});
 }
-}
+
 
 plusButtons.forEach((plusButton) => {
 	plusButton.addEventListener('click', eentjeErBij);

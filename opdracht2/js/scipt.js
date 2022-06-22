@@ -63,5 +63,3 @@ function checkEmpty() {
 		}
 	});
 }
-
-console.log(checkEmpty());
